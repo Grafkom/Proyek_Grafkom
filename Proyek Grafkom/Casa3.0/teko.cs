@@ -74,7 +74,7 @@ namespace TareaGL
 		protected override void Particular() 
 	 	{
 			Gl.glColor3d(1,1,1);
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("ALUMINIO"));
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("old1"));
 			Gl.glPushMatrix();
 			double tph = 10;
 			Gl.glTranslated(largo*100/4,Height+tph*.8,-ancho*100/2);

@@ -31,8 +31,8 @@ namespace TareaGL
 			GlObjectList casa = new GlObjectList();
 			casa.Add(new Casa2());
 
-			casa.Add(new Librero(new Point3D(210, 0, -318), 0));
-			casa.Add(new Librero(new Point3D(210, Librero.Height + .3, -318), 0));
+			casa.Add(new RakPajangan(new Point3D(210, 0, -318), 0));
+			casa.Add(new RakPajangan(new Point3D(210, RakPajangan.Height + .3, -318), 0));
 			casa.Add(new Lamp(new Point3D(60,270,190),70));
             casa.Add(new Lamp(new Point3D(300,270,350),70));
             casa.Add(new Lamp(new Point3D(350,270,-500),70));
@@ -40,6 +40,18 @@ namespace TareaGL
             casa.Add(new Lamp(new Point3D(-120,270,-550),70));
             casa.Add(new Lamp(new Point3D(-220,270,-300),70));
             casa.Add(new Lamp(new Point3D(-180,270,90),70));
+
+			casa.Add(new RakPajangan(new Point3D(-145, 0, -170), 0)); 
+			casa.Add(new RakPajangan(new Point3D(-145, RakPajangan.Height, -170), 180));
+			casa.Add(new teko(new Point3D(-175, 4, -125),0));
+			casa.Add(new teko1(new Point3D(-215, 24, -125),0));
+			casa.Add(new teko3(new Point3D(-215, -18, -125),0));
+
+			casa.Add(new RakPajangan(new Point3D(400, 0, -635), 180));
+			casa.Add(new RakPajangan(new Point3D(400, RakPajangan.Height, -635), 0));
+			casa.Add(new teko5(new Point3D(430, 4, -638), 180));
+			casa.Add(new teko2(new Point3D(470, 24, -638), 180));
+			casa.Add(new teko4(new Point3D(470, -18, -638), 180));
 
 			casa.Add(new Refrigerador(new Point3D(-60,-40,-550),180));
 			casa.Add(new Refrigerador(new Point3D(-50,-30,-550),180));
@@ -79,8 +91,8 @@ namespace TareaGL
 			casa.Add(new Estante(new Point3D(-210,170,-108)));
 			Plantilla obj = new Mesa(new Point3D(380,0,200));
 			casa.Add(obj);
-			casa.Add(new TV(new Point3D(-90,100,150),90));
-			casa.Add(new TV(new Point3D(-30,100,350),140));
+			casa.Add(new Painting(new Point3D(-90,100,150),90));
+			casa.Add(new Painting(new Point3D(-30,100,350),140));
 
 
 			//resepsionis

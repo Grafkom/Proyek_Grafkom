@@ -8,18 +8,18 @@ namespace TareaGL
 	/// Summary description for TV.
 	/// </summary>
     /// 
-	public class TV : Plantilla
+	public class Painting : Plantilla
 	{
 		public static int ctr = 0;
 
-		public TV(Point3D center,double angle):base(center,angle)
+		public Painting(Point3D center,double angle):base(center,angle)
 		{
 			yInc = 35;
 			ctr++;
 			Console.WriteLine("ctr:"+ctr);
 		}
 
-		public TV(Point3D center):this(center,0){}
+		public Painting(Point3D center):this(center,0){}
 
 		protected override void Particular(){
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("frame2"));
