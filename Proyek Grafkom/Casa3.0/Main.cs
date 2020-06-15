@@ -33,7 +33,7 @@ namespace TareaGL
 
 			casa.Add(new RakPajangan(new Point3D(210, 0, -318), 0));
 			casa.Add(new RakPajangan(new Point3D(210, RakPajangan.Height + .3, -318), 0));
-			casa.Add(new TV(new Point3D(330, 73, -73), 180));
+			casa.Add(new TV(new Point3D(315, 125, -33), 180));
 
 			casa.Add(new Lamp(new Point3D(60,270,190),70));
             casa.Add(new Lamp(new Point3D(300,270,350),70));

@@ -18,13 +18,13 @@ namespace TareaGL
 		protected override void Particular(){
 			//Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("frame2"));
 			Gl.glColor3d(0.421875,0.421875,0.421875);
-			GlUtils.PintaOrtoedroUnstretched(40,35,5);
+			GlUtils.PintaOrtoedroUnstretched(130,90,5);
 			Gl.glPushMatrix();
 			Gl.glTranslated(0,-2,-30);
 			Gl.glTranslated(0,2,40);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("paint"));			
 			Gl.glColor3d(0,0,0);
-			GlUtils.PintaOrtoedroUnstretched(30,25,0.5);
+			GlUtils.PintaOrtoedroUnstretched(125,85,0.5);
 			Gl.glPopMatrix();
 			Gl.glPushMatrix();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, 0);
