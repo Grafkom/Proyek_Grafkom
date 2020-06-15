@@ -170,7 +170,7 @@
     <Compile Include="Mesa.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MesetaConFregadero.cs">
+    <Compile Include="teko.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Mesita.cs">
@@ -182,6 +182,13 @@
     <Compile Include="ObjetoDePrueba.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Piring1.cs" />
+    <Compile Include="Piring2.cs" />
+    <Compile Include="Piring3.cs" />
+    <Compile Include="Piring4.cs" />
+    <Compile Include="Piring5.cs" />
+    <Compile Include="Piring6.cs" />
+    <Compile Include="Piring7.cs" />
     <Compile Include="Plantilla.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -206,6 +213,13 @@
     <Compile Include="SolidWall.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="teko1.cs" />
+    <Compile Include="teko2.cs" />
+    <Compile Include="teko3.cs" />
+    <Compile Include="teko4.cs" />
+    <Compile Include="teko5.cs" />
+    <Compile Include="teko6.cs" />
+    <Compile Include="teko7.cs" />
     <Compile Include="TranslatedObject.cs">
       <SubType>Code</SubType>
     </Compile>
