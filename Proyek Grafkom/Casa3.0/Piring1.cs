@@ -19,13 +19,15 @@ namespace TareaGL
 			Gl.glColor3d(1, 1, 1);
 			Gl.glPushMatrix();
 			Gl.glRotated(90, 1, 4, 0);
-			Glu.gluDisk(q, 0, 5 * 2, 20, 20);
+			//bawah piring
+			Glu.gluDisk(q, 0, 5 * 3, 20, 20);
 			Gl.glRotated(180, 1, 0, 0);
-			Glu.gluCylinder(q, 5 * 2, 8 * 2, 3 * 2, 20, 20);
-			Gl.glTranslated(0, 0, 2.5 * 2);
+			//pinggiran
+			Glu.gluCylinder(q, 5 * 3, 8 * 3, 3 * 3, 20, 20);
+			Gl.glTranslated(0, 0, 2.5 * 3);
 			Gl.glColor3d(0, 0, 0);
-			Glu.gluDisk(q, 14.8, 15, 20, 20);
-			Gl.glTranslated(0, 0, -2.5 * 2);
+
+			Gl.glTranslated(0, 0, -2.5 * 3);
 			Gl.glRotated(90, 1, 4, 0);
 			Gl.glPopMatrix();
 			yInc = 0;
