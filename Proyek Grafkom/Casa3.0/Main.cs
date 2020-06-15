@@ -109,6 +109,14 @@ namespace TareaGL
 			casa.Add(new Plato(new Point3D(380, 108, 200)));
 			//casa.Add(new Vaso(new Point3D(380,obj.Height+.2,230)));
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-140),-90));
+			casa.Add(new MesitaDeNoche(new Point3D(455,0,-380),-90));
+			casa.Add(new Piring1(new Point3D(455,95,-380),-90));
+			casa.Add(new MesitaDeNoche(new Point3D(355,0,-380),-90));
+			casa.Add(new Piring5(new Point3D(355,88,-380),-90));
+			casa.Add(new MesitaDeNoche(new Point3D(255,0,-380),-90));
+			casa.Add(new Piring3(new Point3D(255,88,-380),-90));
+			casa.Add(new MesitaDeNoche(new Point3D(155,0,-380),-90));
+			casa.Add(new Piring4(new Point3D(155,88,-380),-90));
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-380),-90));
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-580),-90));
 			//casa.Add(new MesitaDeNoche(new Point3D(-280,0,-340),90));
