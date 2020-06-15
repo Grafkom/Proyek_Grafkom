@@ -91,8 +91,8 @@ namespace TareaGL
 			casa.Add(new Estante(new Point3D(-210,170,-108)));
 			Plantilla obj = new Mesa(new Point3D(380,0,200));
 			casa.Add(obj);
-			casa.Add(new TV(new Point3D(-90,100,150),90));
-			casa.Add(new TV(new Point3D(-30,100,350),140));
+			casa.Add(new Painting(new Point3D(-90,100,150),90));
+			casa.Add(new Painting(new Point3D(-30,100,350),140));
 
 
 			//resepsionis

@@ -223,7 +223,7 @@
     <Compile Include="TranslatedObject.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TV.cs">
+    <Compile Include="Painting.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Vaso.cs">
