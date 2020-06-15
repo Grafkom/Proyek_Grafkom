@@ -47,11 +47,30 @@ namespace TareaGL
 			casa.Add(new teko1(new Point3D(-215, 24, -125),0));
 			casa.Add(new teko3(new Point3D(-215, -18, -125),0));
 
+			casa.Add(new RakPajangan(new Point3D(-225, 0, -170), 0));
+			casa.Add(new RakPajangan(new Point3D(-225, RakPajangan.Height, -170), 180));
+			casa.Add(new Cangkir(new Point3D(-225, 125, -165), 0));
+			casa.Add(new Cangkir(new Point3D(-245, 105, -165), 0));
+			casa.Add(new Cangkir(new Point3D(-205, 105, -165), 0));
+			casa.Add(new Cangkir(new Point3D(-225, 85, -165), 0));
+
 			casa.Add(new RakPajangan(new Point3D(400, 0, -635), 180));
 			casa.Add(new RakPajangan(new Point3D(400, RakPajangan.Height, -635), 0));
 			casa.Add(new teko5(new Point3D(430, 4, -638), 180));
 			casa.Add(new teko2(new Point3D(470, 24, -638), 180));
 			casa.Add(new teko4(new Point3D(470, -18, -638), 180));
+
+			casa.Add(new RakPajangan(new Point3D(-145, 0, -635), 180));
+			casa.Add(new RakPajangan(new Point3D(-145, RakPajangan.Height, -635), 0));
+			casa.Add(new teko6(new Point3D(-115, 4, -638), 180));
+			casa.Add(new teko7(new Point3D(-75, 24, -638), 180));
+			casa.Add(new teko1(new Point3D(-75, -18, -638), 180));
+
+			casa.Add(new RakPajangan(new Point3D(-225, 0, -635), 180));
+			casa.Add(new RakPajangan(new Point3D(-225, RakPajangan.Height, -635), 0));
+			casa.Add(new teko(new Point3D(-195, 4, -638), 180));
+			casa.Add(new teko4(new Point3D(-155, 24, -638), 180));
+			casa.Add(new teko2(new Point3D(-155, -18, -638), 180));
 
 			casa.Add(new Refrigerador(new Point3D(-60,-40,-550),180));
 			casa.Add(new Refrigerador(new Point3D(-50,-30,-550),180));

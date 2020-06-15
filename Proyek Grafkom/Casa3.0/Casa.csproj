@@ -226,7 +226,7 @@
     <Compile Include="Painting.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Vaso.cs">
+    <Compile Include="Cangkir.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Wall.cs">

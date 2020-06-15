@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Vaso.
 	/// </summary>
-	public class Vaso: Plantilla
+	public class Cangkir: Plantilla
 	{
-		public Vaso(Point3D center,double angle):base(center,angle){}
+		public Cangkir(Point3D center,double angle):base(center,angle){}
 
-		public Vaso(Point3D center):this(center,0){}
+		public Cangkir(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{
@@ -24,7 +24,7 @@ namespace TareaGL
 			Gl.glRotated(90,1,0,0);
 			Glu.gluDisk(q,0,5,20,20);
 			Gl.glRotated(180,1,0,0);
-			Glu.gluCylinder(q,5,7,20,20,20);
+			Glu.gluCylinder(q,5,7,15,20,20);
 			Gl.glColor3d(0,0,0);
 			Glu.gluDisk(q,4.8,5,20,20);
 			Gl.glTranslated(0,0,20);
