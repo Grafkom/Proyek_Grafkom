@@ -15,7 +15,7 @@ namespace TareaGL
 		protected override void Particular()
 		{
 
-Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("piel"));		
+Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("rose"));		
 			Gl.glPushMatrix();
 			Gl.glColor3d(1,1,1);
 			Gl.glTranslatef(0,-0.05f*70,0);
@@ -51,7 +51,7 @@ Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("madera"));
 			GlUtils.PintaOrtoedro(0.02f*70,0.2f*70,0.05f*70);
 			Gl.glPopMatrix();
 
-Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("piel"));		
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("rose"));		
 			Gl.glColor3d(1,1,1);
 			Gl.glPushMatrix();
 			Gl.glTranslatef(0.3f*70,0.6f*70,0);
@@ -60,7 +60,7 @@ Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("piel"));
 			yInc = 0.9*70;
 			Gl.glPopMatrix();
 
-Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 		}
 	}
 }

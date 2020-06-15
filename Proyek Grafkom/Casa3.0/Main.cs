@@ -81,8 +81,6 @@ namespace TareaGL
 			casa.Add(new Refrigerador(new Point3D(180,-40,-550),180));
 
 
-			//Cushion
-			casa.Add(new Cojin(new Point3D(200,0,325),120));
 
 
 			//casa.Add(new Cama(new Point3D(370,0,-250),0,100,70));
@@ -96,17 +94,23 @@ namespace TareaGL
 
 
 			//resepsionis
-			obj = new EstanteHorizontal(new Point3D(100,0,50));
-			//System.Windows.Forms.MessageBox.Show(origin.X+" "+origin.Y+" "+origin.Z);
+			casa.Add(new Clock(new Point3D(160,200,50),0));
+			obj = new EstanteHorizontal(new Point3D(160,0,50),180);
 			casa.Add(obj);
 
-			//casa.Add(new Silla(new Point3D(440,0,160)));
-			//casa.Add(new Silla(new Point3D(440,0,240)));
-			//casa.Add(new Silla(new Point3D(330,0,160),180));
-			//casa.Add(new Silla(new Point3D(330,0,240),180));
-			//casa.Add(new Silla(new Point3D(385,0,110),90));
-			//casa.Add(new Silla(new Point3D(385,0,290),-90));
-			casa.Add(new Plato(new Point3D(380, 108, 200)));
+			
+			//Cushion
+			casa.Add(new Cojin(new Point3D(220,65,450),120));
+			casa.Add(new Cojin(new Point3D(220,65,380),120));
+			casa.Add(new Cojin(new Point3D(220,65,520),120));
+
+			//Kursi
+			casa.Add(new Silla(new Point3D(220,0,380),180));
+			casa.Add(new Silla(new Point3D(220,0,450),180));
+			casa.Add(new Silla(new Point3D(220,0,520),180));
+
+			casa.Add(new Plato(new Point3D(380,108,200)));
+
 			//casa.Add(new Vaso(new Point3D(380,obj.Height+.2,230)));
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-140),-90));
 			casa.Add(new MesitaDeNoche(new Point3D(455,0,-380),-90));
@@ -120,9 +124,9 @@ namespace TareaGL
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-380),-90));
 			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-580),-90));
 			//casa.Add(new MesitaDeNoche(new Point3D(-280,0,-340),90));
-			obj = new EstanteHorizontal(new Point3D(330,0,-70),180);
+			obj = new MesitaDeNoche(new Point3D(330,0,-70),180);
 			casa.Add(obj);
-
+			
 			casa.Add(new Butaca(new Point3D(350, 0, -280), 0, 2));
 			//casa.Add(new Butaca(new Point3D(-30,0,200),90,2));
 			//casa.Add(new Butaca(new Point3D(200,0,270),250,1));
@@ -130,7 +134,7 @@ namespace TareaGL
 
 			casa.Add(new teko(new Point3D(-307,0,-64),0));			
 
-			casa.Add(new Clock(new Point3D(485,200,325),270));
+			
 			GlObject c = new TranslatedObject(new Point3D(0,0,-70),casa);
 			world.Add(c);
 		#endif

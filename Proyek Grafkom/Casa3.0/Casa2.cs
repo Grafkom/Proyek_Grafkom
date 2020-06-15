@@ -27,18 +27,11 @@ namespace TareaGL
 			ws.CloseTo(false);
 			piso = new Piso(x1,z1,x2,z2,10);
 			techo = new Techo(x1,z1,x2,z2,20,height-10-20);
-//			piso = new Piso(521.5,603,-344,-670,10);
-//			techo = new Techo(521.5,603,-344,-670,20,270);
 			#region BalconRecibidor
 			//Pared exterior de la sala
 			//1
 			ws.BeginStrip(false,true);
-			ws.CloseTo(true);
-			ws.Add(491.5,-10,491.5,373,"woden glass woden");
-//			ws.Add(491.5,-10,491.5,373,"woden");
-			ws.CloseTo(false);
-
-			ws.AddTo(491.5,523,"glass");
+			ws.Add(491.5,-10,491.5,523,"glass");
 			ws.AddTo(296,573,"glass");
 			ws.CloseFrom(true);
 			ws.AddTo(184,573);
