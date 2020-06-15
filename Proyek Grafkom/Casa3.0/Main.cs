@@ -35,9 +35,40 @@ namespace TareaGL
 			casa.Add(new Librero(new Point3D(210,0,-318),0));
 			casa.Add(new Librero(new Point3D(210,Librero.Height+.3,-316),-3));
 			casa.Add(new Lamp(new Point3D(60,270,190),70));
-			//casa.Add(new Refrigerador(new Point3D(-145,0,120),180));
-			//Plantilla obj = new Mesita(new Point3D(80,0,40),90);
-			//casa.Add(obj);
+            casa.Add(new Lamp(new Point3D(300,270,350),70));
+            casa.Add(new Lamp(new Point3D(350,270,-500),70));
+            casa.Add(new Lamp(new Point3D(350,270,-150),70));
+            casa.Add(new Lamp(new Point3D(-120,270,-550),70));
+            casa.Add(new Lamp(new Point3D(-220,270,-300),70));
+            casa.Add(new Lamp(new Point3D(-180,270,90),70));
+
+			casa.Add(new Refrigerador(new Point3D(-60,-40,-550),180));
+			casa.Add(new Refrigerador(new Point3D(-50,-30,-550),180));
+			casa.Add(new Refrigerador(new Point3D(-40,-20,-550),180));
+			casa.Add(new Refrigerador(new Point3D(-30,-10,-550),180));
+			casa.Add(new Refrigerador(new Point3D(-20,0,-550),180));
+			casa.Add(new Refrigerador(new Point3D(-10,10,-560),180));
+			casa.Add(new Refrigerador(new Point3D(0,20,-570),180));
+			casa.Add(new Refrigerador(new Point3D(10,30,-580),180));
+			casa.Add(new Refrigerador(new Point3D(20,40,-590),180));
+			casa.Add(new Refrigerador(new Point3D(30,50,-600),180));
+			casa.Add(new Refrigerador(new Point3D(40,60,-610),180));
+			casa.Add(new Refrigerador(new Point3D(50,70,-620),180));
+			casa.Add(new Refrigerador(new Point3D(60,80,-630),180));
+			casa.Add(new Refrigerador(new Point3D(70,70,-620),180));
+			casa.Add(new Refrigerador(new Point3D(80,60,-610),180));
+			casa.Add(new Refrigerador(new Point3D(90,50,-600),180));
+			casa.Add(new Refrigerador(new Point3D(100,40,-590),180));
+			casa.Add(new Refrigerador(new Point3D(110,30,-580),180));
+			casa.Add(new Refrigerador(new Point3D(120,20,-570),180));
+			casa.Add(new Refrigerador(new Point3D(130,10,-560),180));
+			casa.Add(new Refrigerador(new Point3D(140,0,-550),180));
+			casa.Add(new Refrigerador(new Point3D(150,-10,-550),180));
+			casa.Add(new Refrigerador(new Point3D(160,-20,-550),180));
+			casa.Add(new Refrigerador(new Point3D(170,-30,-550),180));
+			casa.Add(new Refrigerador(new Point3D(180,-40,-550),180));
+			casa.Add(new Refrigerador(new Point3D(180,-40,-550),180));
+
 
 			//Cushion
 			casa.Add(new Cojin(new Point3D(200,0,325),120));
@@ -49,13 +80,14 @@ namespace TareaGL
 			casa.Add(new Estante(new Point3D(-210,170,-108)));
 			Plantilla obj = new Mesa(new Point3D(380,0,200));
 			casa.Add(obj);
+			casa.Add(new TV(new Point3D(-100,100,150),90));
+			casa.Add(new TV(new Point3D(-30,100,350),140));
+
+
+			//resepsionis
 			obj = new EstanteHorizontal(new Point3D(100,0,50));
 			//System.Windows.Forms.MessageBox.Show(origin.X+" "+origin.Y+" "+origin.Z);
 			casa.Add(obj);
-			
-			//Picture
-			//obj = new Cuadro(new Point3D(200,0,325));
-			//casa.Add(obj);
 
 			//casa.Add(new Silla(new Point3D(440,0,160)));
 			//casa.Add(new Silla(new Point3D(440,0,240)));
@@ -76,7 +108,7 @@ namespace TareaGL
 			//casa.Add(new Butaca(new Point3D(200,0,270),250,1));
 			//casa.Add(new Butaca(new Point3D(200,0,110),-70,1));
 
-			//casa.Add(new MesetaConFregadero(new Point3D(-307,0,-64),0));			
+			casa.Add(new MesetaConFregadero(new Point3D(-307,0,-64),0));			
 
 			casa.Add(new Clock(new Point3D(485,200,325),270));
 			GlObject c = new TranslatedObject(new Point3D(0,0,-70),casa);

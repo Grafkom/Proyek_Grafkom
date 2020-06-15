@@ -146,7 +146,6 @@ namespace TareaGL
 					PressedKeyBackward=false;
 					break;
 			}
-			Console.WriteLine("x: " + origin.X + "y: " + origin.Y);
 			
 		}
 
@@ -176,6 +175,8 @@ namespace TareaGL
 					if (state==Glut.GLUT_DOWN) toggleUpdate();
 					break;
 			}
+		Console.WriteLine("x: " + origin.X + "y: " + origin.Y);
+
 		}
 
 		protected void toggleUpdate() 

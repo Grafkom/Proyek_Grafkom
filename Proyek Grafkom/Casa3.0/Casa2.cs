@@ -67,10 +67,10 @@ namespace TareaGL
 			//9
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-37,-103,-288);
-			ws.AddTo(-103,-362,"door");
+			//ws.AddTo(-103,-362,"door");
 			ws.EndStrip();
 
-			//8
+			//8 kamar depan
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-125,-314,-125);
 			//ws.AddTo(-314,162,"woden woden",true);
@@ -79,11 +79,11 @@ namespace TareaGL
 			ws.EndStrip();
 
 			//7
-			ws.BeginStrip(false,true);
-			ws.Add(-185,-125,-185,-220);
-			ws.EndStrip();
+			//ws.BeginStrip(false,true);
+			//ws.Add(-185,-125,-185,-220);
+			//ws.EndStrip();
 			
-			//6
+			//6 kamar tengah
 			ws.BeginStrip(false,true);
 			ws.Add(-314,-125,-314,-215);
 			ws.AddTo(-268,-215);
@@ -92,30 +92,30 @@ namespace TareaGL
 			//5
 			ws.BeginStrip(false,false);
 			ws.Add(-314,-215,-314,-480,"glass woden");
-			ws.AddTo(-103,-480);
-			ws.AddTo(-103,-362);
+			//ws.AddTo(-103,-480);
+			//ws.AddTo(-103,-362);
 			ws.EndStrip();
 			
 			//4
 			ws.BeginStrip(false,true);
 			ws.Add(-314,-480,-314,-640);
-			ws.AddTo(10,-640);
-			ws.AddTo(10,-420);
-			ws.AddTo(126,-420);
+			//ws.AddTo(10,-640);
+			//ws.AddTo(10,-420);
+			//ws.AddTo(126,-420);
 			ws.AddTo(126,-640); // Idealmente, esta seria otro tipo de pared, "walk in closet" o algo asi.
 			ws.EndStrip();
 			
-			//3
+			//3 ruang tunggu
 			ws.BeginStrip(false,true);
 			ws.Add(10,-640,491.5,-640,"glass woden");
 			ws.AddTo(491.5,-325,"woden glass woden");
 			ws.AddTo(71,-325);
 			ws.EndStrip();
 			ws.BeginStrip(false,false);
-			ws.Add(88,-325,88,-230,"passage");
+			ws.Add(88,-325,88,-230,"door");
 			ws.EndStrip();
 			ws.BeginStrip(false,false);
-			ws.Add(88,-325,86,-420,"passage");
+			//ws.Add(88,-325,86,-420,"passage");
 			ws.EndStrip();
 
 			//2
@@ -129,7 +129,7 @@ namespace TareaGL
 			#endregion
 			//Puerta del banno
 			ws.BeginStrip(false,false);
-			ws.Add(10,-480,-103,-480,"passage");
+			//ws.Add(10,-480,-103,-480,"passage");
 			ws.EndStrip();
 		}
 		public override void Split(ArrayList far, ArrayList near) 

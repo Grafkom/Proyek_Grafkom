@@ -14,8 +14,7 @@ namespace TareaGL
 
 		protected override void Particular()
 		{
-Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
-			//Gl.glColor3d(0.5,0.25,0);
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
 			Glu.GLUquadric q = Glu.gluNewQuadric();
 			Glu.gluQuadricNormals(q,Glu.GLU_SMOOTH);
 			Glu.gluQuadricTexture(q,Gl.GL_TRUE);

@@ -14,7 +14,7 @@ namespace TareaGL
 
 		protected override void Particular()
 		{
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("ALUMINIO"));
+			//Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("ALUMINIO"));
 			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,1);
 
 			Glu.GLUquadric q = Glu.gluNewQuadric();

@@ -18,7 +18,7 @@ namespace TareaGL
 		{
 		}
 
-		public Cuadro(Point3D center, string textura):this(center, 0, textura, 50, 30)
+		public Cuadro(Point3D center, string textura):this(center, 0, textura)
 		{
 		}
 
