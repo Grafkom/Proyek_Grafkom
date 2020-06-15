@@ -61,7 +61,7 @@ namespace TareaGL
 			Gl.glTranslated(0, 0, 0);
 			#region cuerpo
 //			Gl.glColor3d(1, 0, 0);
-			Gl.glColor3d(1, 0, 0);
+			//Gl.glColor3d(1, 0, 0);
 
 			Gl.glPushMatrix();
 			Gl.glTranslated(0, 25, 0);
@@ -73,25 +73,28 @@ namespace TareaGL
 			Gl.glPushMatrix();
 			Gl.glTranslated(0, 25, 0);
 			Gl.glRotated(90, 1, 0, 0);
-			Gl.glColor3d(.5,.5,.5);
+			//Gl.glColor3d(.5,.5,.5);
+
 			Glu.gluCylinder(quadric, 5, 5, 12, 8, 8);
 			Gl.glPopMatrix();
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("bulb"));
 			Gl.glPushMatrix();
-			Gl.glColor3d(1, 1, 0);
+
+			Gl.glColor3d(1, 1, 1);
 			Gl.glTranslated(0, 8, 0);
 			Glut.glutSolidSphere(10, 8, 8);
 			Gl.glPopMatrix();
 			#endregion bombillo;
 			Gl.glPushMatrix();
-//			Gl.glEnable(Gl.GL_BLEND);
+			Gl.glEnable(Gl.GL_BLEND);
 			Gl.glColor3d(.98, .58, .35);
+			//Gl.glColor3d(.32, 0, 0);
 			Gl.glClipPlane(Gl.GL_CLIP_PLANE0, plano);
 			Gl.glEnable(Gl.GL_CLIP_PLANE0);
 			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,1);
 			Glu.gluSphere(quadric,30,15,10);
 			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,0);
 			Gl.glPopMatrix();
-//			Gl.glDisable(Gl.GL_BLEND);
 			Gl.glDisable(Gl.GL_CLIP_PLANE0);
 			Gl.glPopMatrix();
 			if (cullFace!=Gl.GL_FALSE) 

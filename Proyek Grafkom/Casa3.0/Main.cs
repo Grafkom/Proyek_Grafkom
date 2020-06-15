@@ -16,7 +16,6 @@ namespace TareaGL
 	{
 
 		protected bool running=true;
-
 		protected int Width=1024;
 		protected int Height=768;
 
@@ -80,7 +79,7 @@ namespace TareaGL
 			casa.Add(new Estante(new Point3D(-210,170,-108)));
 			Plantilla obj = new Mesa(new Point3D(380,0,200));
 			casa.Add(obj);
-			casa.Add(new TV(new Point3D(-100,100,150),90));
+			casa.Add(new TV(new Point3D(-90,100,150),90));
 			casa.Add(new TV(new Point3D(-30,100,350),140));
 
 

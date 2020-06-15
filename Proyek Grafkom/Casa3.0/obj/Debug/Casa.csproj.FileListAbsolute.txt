@@ -44,3 +44,11 @@ C:\Users\USER\Downloads\Proyek Grafkom\Casa3.0\obj\Debug\Casa.csproj.CoreCompile
 C:\Users\USER\Downloads\Proyek Grafkom\Casa3.0\obj\Debug\Casa.csproj.CopyComplete
 C:\Users\USER\Downloads\Proyek Grafkom\Casa3.0\obj\Debug\Casa.exe
 C:\Users\USER\Downloads\Proyek Grafkom\Casa3.0\obj\Debug\Casa.pdb
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.csprojAssemblyReference.cache
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.exe
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.pdb
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Casa.exe
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Casa.pdb
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Tao.OpenGl.dll
+C:\Users\USER\Desktop\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.csproj.CopyComplete
