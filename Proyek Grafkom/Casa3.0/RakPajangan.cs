@@ -7,7 +7,7 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Estante.
 	/// </summary>
-	public class Librero: GlObject
+	public class RakPajangan: GlObject
 	{
 		protected static int idEstante = -1;
 		protected Point3D location;
@@ -15,10 +15,10 @@ namespace TareaGL
 		public static double Height { get { return 76; }}
 		public static double Depth { get { return 34; }}
 		protected double angle;
-		public Librero():this(new Point3D(0,0,0),0)
+		public RakPajangan():this(new Point3D(0,0,0),0)
 		{
 		}
-		public Librero(Point3D location, double angle) 
+		public RakPajangan(Point3D location, double angle) 
 		{
 			this.location=location;
 			this.angle=angle;

@@ -155,7 +155,7 @@
     <Compile Include="Lamp.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Librero.cs">
+    <Compile Include="RakPajangan.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LightSource.cs">
