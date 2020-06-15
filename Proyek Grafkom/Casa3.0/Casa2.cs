@@ -42,6 +42,7 @@ namespace TareaGL
 			#region salaCocina - division entre la sala y la cocina
 			ws.BeginStrip(false,false);
 			ws.Add(178,416,103,416,"reversed door");
+			//ws.Add(108,416,33,416,"reversed door");
 			ws.AddTo(0,416);
 			ws.AddTo(-103,318);
 			ws.AddTo(-103,37);

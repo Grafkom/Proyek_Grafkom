@@ -3,9 +3,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Plato.
-	/// </summary>
 	public class Piring: Plantilla
 	{
 		public Piring(Point3D center,double angle):base(center,angle){}

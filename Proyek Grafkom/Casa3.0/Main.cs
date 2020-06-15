@@ -39,7 +39,7 @@ namespace TareaGL
             casa.Add(new Lamp(new Point3D(300,270,350),70));
             casa.Add(new Lamp(new Point3D(350,270,-500),70));
             casa.Add(new Lamp(new Point3D(350,270,-150),70));
-            casa.Add(new Lamp(new Point3D(-120,270,-550),70));
+            //casa.Add(new Lamp(new Point3D(-120,270,-550),70));
             casa.Add(new Lamp(new Point3D(-220,270,-300),70));
             casa.Add(new Lamp(new Point3D(-180,270,90),70));
 
@@ -62,17 +62,31 @@ namespace TareaGL
 			casa.Add(new teko2(new Point3D(470, 24, -638), 180));
 			casa.Add(new teko4(new Point3D(470, -18, -638), 180));
 
-			casa.Add(new RakPajangan(new Point3D(-145, 0, -635), 180));
-			casa.Add(new RakPajangan(new Point3D(-145, RakPajangan.Height, -635), 0));
-			casa.Add(new teko6(new Point3D(-115, 4, -638), 180));
-			casa.Add(new teko7(new Point3D(-75, 24, -638), 180));
-			casa.Add(new teko1(new Point3D(-75, -18, -638), 180));
+			//casa.Add(new RakPajangan(new Point3D(-145, 0, -635), 180));
+			//casa.Add(new RakPajangan(new Point3D(-145, RakPajangan.Height, -635), 0));
+			//casa.Add(new teko6(new Point3D(-115, 4, -638), 180));
+			//casa.Add(new teko7(new Point3D(-75, 24, -638), 180));
+			//casa.Add(new teko1(new Point3D(-75, -18, -638), 180));
 
-			casa.Add(new RakPajangan(new Point3D(-225, 0, -635), 180));
-			casa.Add(new RakPajangan(new Point3D(-225, RakPajangan.Height, -635), 0));
-			casa.Add(new teko(new Point3D(-195, 4, -638), 180));
-			casa.Add(new teko4(new Point3D(-155, 24, -638), 180));
-			casa.Add(new teko2(new Point3D(-155, -18, -638), 180));
+			//casa.Add(new RakPajangan(new Point3D(-225, 0, -635), 180));
+			//casa.Add(new RakPajangan(new Point3D(-225, RakPajangan.Height, -635), 0));
+			//casa.Add(new teko(new Point3D(-195, 4, -638), 180));
+			//casa.Add(new teko4(new Point3D(-155, 24, -638), 180));
+			//casa.Add(new teko2(new Point3D(-155, -18, -638), 180));
+
+			casa.Add(new Pillar(new Point3D(-180,70,-620),180));
+			casa.Add(new Pillar(new Point3D(-170,60,-610),180));
+			casa.Add(new Pillar(new Point3D(-160,50,-600),180));
+			casa.Add(new Pillar(new Point3D(-150,40,-590),180));
+			casa.Add(new Pillar(new Point3D(-140,30,-580),180));
+			casa.Add(new Pillar(new Point3D(-130,20,-570),180));
+			casa.Add(new Pillar(new Point3D(-120,10,-560),180));
+			casa.Add(new Pillar(new Point3D(-110,0,-550),180));
+			casa.Add(new Pillar(new Point3D(-100,-10,-550),180));
+			casa.Add(new Pillar(new Point3D(-90,-20,-550),180));
+			casa.Add(new Pillar(new Point3D(-80,-30,-550),180));
+			casa.Add(new Pillar(new Point3D(-70,-40,-550),180));
+			
 
 			casa.Add(new Pillar(new Point3D(-60,-40,-550),180));
 			casa.Add(new Pillar(new Point3D(-50,-30,-550),180));
@@ -99,39 +113,55 @@ namespace TareaGL
 			casa.Add(new Pillar(new Point3D(160,-20,-550),180));
 			casa.Add(new Pillar(new Point3D(170,-30,-550),180));
 			casa.Add(new Pillar(new Point3D(180,-40,-550),180));
-			casa.Add(new Pillar(new Point3D(180,-40,-550),180));
-
+			
+			casa.Add(new Pillar(new Point3D(190,-40,-550),180));
+			casa.Add(new Pillar(new Point3D(200,-30,-550),180));
+			casa.Add(new Pillar(new Point3D(210,-20,-550),180));
+			casa.Add(new Pillar(new Point3D(220,-10,-550),180));
+			casa.Add(new Pillar(new Point3D(230,0,-550),180));
+			casa.Add(new Pillar(new Point3D(240,10,-560),180));
+			casa.Add(new Pillar(new Point3D(250,20,-570),180));
+			casa.Add(new Pillar(new Point3D(260,30,-580),180));
+			casa.Add(new Pillar(new Point3D(270,40,-590),180));
+			casa.Add(new Pillar(new Point3D(280,50,-600),180));
+			casa.Add(new Pillar(new Point3D(290,60,-610),180));
+			casa.Add(new Pillar(new Point3D(300,70,-620),180));
 
 			//casa.Add(new Cama(new Point3D(370,0,-250),0,100,70));
 			//casa.Add(new Cama(new Point3D(370,0,-480),0,100,60));
 			//casa.Add(new Cama(new Point3D(-210,0,-420),0,90,40));
-			casa.Add(new Rak(new Point3D(-210,170,-108)));
+			//casa.Add(new Rak(new Point3D(-210,170,-108)));
 			Plantilla obj = new Meja(new Point3D(380,0,200));
 			casa.Add(obj);
-			casa.Add(new Painting(new Point3D(-90,100,150),90));
-			casa.Add(new Painting(new Point3D(-30,100,350),140));
+
+			//casa.Add(new Painting(new Point3D(-90,100,150),90));
+			//casa.Add(new Painting(new Point3D(-30,100,350),140));
+
+			casa.Add(new Painting(new Point3D(-240,100,80),110));
+			casa.Add(new Painting(new Point3D(-270,100,-20),110));
+			casa.Add(new Painting(new Point3D(-200,100,-100),0));
+			casa.Add(new Painting(new Point3D(-170,100,150),180));
+			casa.Add(new Painting(new Point3D(60,100,-590),0));
+			casa.Add(new Painting(new Point3D(-90,40,-530),0));
+			casa.Add(new Painting(new Point3D(210,40,-530),0));
 
 
-			//resepsionis
-			casa.Add(new Clock(new Point3D(160,200,50),0));
+
+			casa.Add(new Clock(new Point3D(160,200,0),0));
 			obj = new Resepsionis(new Point3D(160,0,50),180);
 			casa.Add(obj);
 
 			
-			//Cushion
 			casa.Add(new Bantal(new Point3D(220,65,450),120));
 			casa.Add(new Bantal(new Point3D(220,65,380),120));
 			casa.Add(new Bantal(new Point3D(220,65,520),120));
 
-			//Kursi
 			casa.Add(new Kursi(new Point3D(220,0,380),180));
 			casa.Add(new Kursi(new Point3D(220,0,450),180));
 			casa.Add(new Kursi(new Point3D(220,0,520),180));
 
 			casa.Add(new Piring(new Point3D(380,108,200)));
 
-			//casa.Add(new Vaso(new Point3D(380,obj.Height+.2,230)));
-			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-140),-90));
 			casa.Add(new MejaDisplay(new Point3D(455,0,-380),-90));
 			casa.Add(new Piring1(new Point3D(455,95,-380),-90));
 			casa.Add(new MejaDisplay(new Point3D(355,0,-380),-90));
@@ -140,18 +170,12 @@ namespace TareaGL
 			casa.Add(new Piring3(new Point3D(255,88,-380),-90));
 			casa.Add(new MejaDisplay(new Point3D(155,0,-380),-90));
 			casa.Add(new Piring4(new Point3D(155,88,-380),-90));
-			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-380),-90));
-			//casa.Add(new MesitaDeNoche(new Point3D(455,0,-580),-90));
-			//casa.Add(new MesitaDeNoche(new Point3D(-280,0,-340),90));
+			
 			obj = new MejaDisplay(new Point3D(330,0,-70),180);
 			casa.Add(obj);
 			
 			casa.Add(new Sofa(new Point3D(350, 0, -280), 0, 2));
-			//casa.Add(new Butaca(new Point3D(-30,0,200),90,2));
-			//casa.Add(new Butaca(new Point3D(200,0,270),250,1));
-			//casa.Add(new Butaca(new Point3D(200,0,110),-70,1));
-
-			casa.Add(new teko(new Point3D(-307,0,-64),0));			
+			//casa.Add(new teko(new Point3D(-307,0,-64),0));			
 
 			
 			GlObject c = new TranslatedObject(new Point3D(0,0,-70),casa);

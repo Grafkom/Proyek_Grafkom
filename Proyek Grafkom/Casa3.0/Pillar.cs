@@ -3,9 +3,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for RefrigeradorGl.
-	/// </summary>
 	public class Pillar : Plantilla
 	{
 		public Pillar(Point3D center,double angle):base(center,angle){}
@@ -14,11 +11,12 @@ namespace TareaGL
 		
 		protected override void Particular()
 		{
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("rose"));
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("cream"));
 			Glu.GLUquadric q = Glu.gluNewQuadric();
 			Glu.gluQuadricNormals(q,Glu.GLU_SMOOTH);
 			Glu.gluQuadricTexture(q,Gl.GL_TRUE);
-			
+			Gl.glColor3d(1, 1, 1);
+
 			GlUtils.PintaOrtoedro(0.7f*5,1.0f*160,0.7f*10);
 
 			Gl.glPopMatrix();
