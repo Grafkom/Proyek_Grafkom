@@ -1,21 +1,18 @@
-using System;
+﻿using System;
 using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Plato.
-	/// </summary>
-	public class Plato: Plantilla
-	{
-		public Plato(Point3D center,double angle):base(center,angle){}
+    public class Piring3 : Plantilla
+    {
+		public Piring3(Point3D center, double angle) : base(center, angle) { }
 
-		public Plato(Point3D center):this(center,0){}
+		public Piring3(Point3D center) : this(center, 0) { }
 
 		protected override void Particular()
 		{
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("old1"));
-			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,1);
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("old4"));
+			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE, 1);
 
 			Glu.GLUquadric q = Glu.gluNewQuadric();
 			Glu.gluQuadricTexture(q, Gl.GL_TRUE);
@@ -37,6 +34,5 @@ namespace TareaGL
 			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE, 0);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, 0);
 		}
- 
 	}
 }
