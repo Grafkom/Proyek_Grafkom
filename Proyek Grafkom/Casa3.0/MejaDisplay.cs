@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for MesitaDeNoche2Gl.
 	/// </summary>
-	public class MesitaDeNoche:Plantilla
+	public class MejaDisplay:Plantilla
 	{
-		public MesitaDeNoche(Point3D center,double angle):base(center,angle){}
+		public MejaDisplay(Point3D center,double angle):base(center,angle){}
 
-		public MesitaDeNoche(Point3D center):this(center,0){}
+		public MejaDisplay(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{

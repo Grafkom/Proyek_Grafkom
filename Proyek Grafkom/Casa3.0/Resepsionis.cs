@@ -5,15 +5,15 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for EstanteHorizontal.
 	/// </summary>
-	public class EstanteHorizontal:Plantilla
+	public class Resepsionis:Plantilla
 	{
-		public EstanteHorizontal(Point3D position, double angle):base(position,angle)
+		public Resepsionis(Point3D position, double angle):base(position,angle)
 		{
 			this.height=92;
 			this.yInc=35+20;
 		}
-		public EstanteHorizontal(Point3D position):this(position,0){}
-		public EstanteHorizontal():this(new Point3D(0,0,0)){}
+		public Resepsionis(Point3D position):this(position,0){}
+		public Resepsionis():this(new Point3D(0,0,0)){}
 		protected override void Particular() 
 		{
 			Gl.glColor3d(.7,.7,.7);

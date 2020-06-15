@@ -6,16 +6,16 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Estante2Gl.
 	/// </summary>
-	public class Estante:Plantilla
+	public class Rak:Plantilla
 	{
 		
 
-		public Estante(Point3D center, double angle):base(center, angle)
+		public Rak(Point3D center, double angle):base(center, angle)
 		{
 			this.canCullFace=true;
 		}
 
-		public Estante(Point3D center):this(center,0){}
+		public Rak(Point3D center):this(center,0){}
 
 
 		protected override void Particular()

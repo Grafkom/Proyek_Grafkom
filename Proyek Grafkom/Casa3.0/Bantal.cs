@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for CojinGl.
 	/// </summary>
-	public class Cojin:Plantilla
+	public class Bantal:Plantilla
 	{
-		public Cojin(Point3D center,double angle):base(center,angle){}
+		public Bantal(Point3D center,double angle):base(center,angle){}
 
-		public Cojin(Point3D center):this(center,0){}
+		public Bantal(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{

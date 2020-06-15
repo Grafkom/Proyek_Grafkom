@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Plato.
 	/// </summary>
-	public class Plato: Plantilla
+	public class Piring: Plantilla
 	{
-		public Plato(Point3D center,double angle):base(center,angle){}
+		public Piring(Point3D center,double angle):base(center,angle){}
 
-		public Plato(Point3D center):this(center,0){}
+		public Piring(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{

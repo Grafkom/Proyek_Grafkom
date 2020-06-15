@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for RefrigeradorGl.
 	/// </summary>
-	public class Refrigerador : Plantilla
+	public class Pillar : Plantilla
 	{
-		public Refrigerador(Point3D center,double angle):base(center,angle){}
+		public Pillar(Point3D center,double angle):base(center,angle){}
 
-		public Refrigerador(Point3D center):this(center,0){}
+		public Pillar(Point3D center):this(center,0){}
 		
 		protected override void Particular()
 		{

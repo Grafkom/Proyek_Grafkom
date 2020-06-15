@@ -6,10 +6,10 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Butaca.
 	/// </summary>
-	public class Butaca:Plantilla
+	public class Sofa:Plantilla
 	{
 		protected int puestos=1;
-		public Butaca(Point3D center, double angle,int puestos):base(center,angle,puestos)
+		public Sofa(Point3D center, double angle,int puestos):base(center,angle,puestos)
 		{
 			this.canCullFace=true;
 			yInc = h;
@@ -19,7 +19,7 @@ namespace TareaGL
 			this.puestos=(int) p[0];
 			l=37*puestos;
 		}
-		public Butaca(Point3D center, double angle): this(center,angle,1){;}
+		public Sofa(Point3D center, double angle): this(center,angle,1){;}
 		protected double h = 37;
 		protected double l = 40;
 		protected double c = 7;

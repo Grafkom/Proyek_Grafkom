@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for SillaGl.
 	/// </summary>
-	public class Silla : Plantilla
+	public class Kursi : Plantilla
 	{
-		public Silla(Point3D center,double angle):base(center,angle){}
+		public Kursi(Point3D center,double angle):base(center,angle){}
 
-		public Silla(Point3D center):this(center,0){}
+		public Kursi(Point3D center):this(center,0){}
 	
 		protected override void Particular()
 		{

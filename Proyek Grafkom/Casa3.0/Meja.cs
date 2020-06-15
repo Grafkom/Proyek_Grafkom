@@ -6,11 +6,11 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Mesa.
 	/// </summary>
-	public class Mesa : Plantilla
+	public class Meja : Plantilla
 	{
-		public Mesa(Point3D center,double angle):base(center,angle){}
+		public Meja(Point3D center,double angle):base(center,angle){}
 
-		public Mesa(Point3D center):this(center,0){}
+		public Meja(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{
