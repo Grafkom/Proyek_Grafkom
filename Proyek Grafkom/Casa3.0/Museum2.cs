@@ -25,9 +25,8 @@ namespace TareaGL
 			ws.CloseTo(false);
 			piso = new Piso(x1,z1,x2,z2,10);
 			techo = new Techo(x1,z1,x2,z2,20,height-10-20);
-			#region BalconRecibidor
-			//Pared exterior de la sala
-			//1
+
+			#region Balkon
 			ws.BeginStrip(false,true);
 			ws.Add(491.5,-10,491.5,523,"glass");
 			ws.AddTo(296,573,"glass");
@@ -37,43 +36,28 @@ namespace TareaGL
 			ws.AddTo(184,318);
 			ws.EndStrip();
 			#endregion
-			#region salaCocina - division entre la sala y la cocina
+
+			#region ruangLukisan
 			ws.BeginStrip(false,false);
 			ws.Add(178,416,103,416,"reversed door");
-			//ws.Add(108,416,33,416,"reversed door");
 			ws.AddTo(0,416);
 			ws.AddTo(-103,318);
 			ws.AddTo(-103,37);
 			ws.AddTo(-103,-37,"passage");
 			ws.EndStrip();
-
-//			ws.BeginStrip(false,true);
-//			ws.Add(-103,-37,-103,37,"passage");
-//			ws.AddTo(-103,318);
-//			ws.AddTo(0,416);
-//			ws.AddTo(103,416);
-//			ws.AddTo(178,416,"door");
-//			ws.EndStrip();
 			#endregion
-			#region outterShell			
-			//9
+
+			#region luar			
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-37,-103,-288);
-			//ws.AddTo(-103,-362,"door");
 			ws.EndStrip();
 
-			//8 kamar depan
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-125,-314,-125);
-			//ws.AddTo(-314,162,"woden woden",true);
 			ws.AddTo(-230,162);
 			ws.AddTo(-103,162);
 			ws.EndStrip();
 
-			//7
-			//ws.BeginStrip(false,true);
-			//ws.Add(-185,-125,-185,-220);
-			//ws.EndStrip();
 			
 			//6 kamar tengah
 			ws.BeginStrip(false,true);
@@ -84,17 +68,12 @@ namespace TareaGL
 			//5
 			ws.BeginStrip(false,false);
 			ws.Add(-314,-215,-314,-480,"glass woden");
-			//ws.AddTo(-103,-480);
-			//ws.AddTo(-103,-362);
 			ws.EndStrip();
 			
 			//4
 			ws.BeginStrip(false,true);
 			ws.Add(-314,-480,-314,-640);
-			//ws.AddTo(10,-640);
-			//ws.AddTo(10,-420);
-			//ws.AddTo(126,-420);
-			ws.AddTo(126,-640); // Idealmente, esta seria otro tipo de pared, "walk in closet" o algo asi.
+			ws.AddTo(126,-640); 
 			ws.EndStrip();
 			
 			//3 ruang tunggu
@@ -107,7 +86,6 @@ namespace TareaGL
 			ws.Add(88,-325,88,-230,"door");
 			ws.EndStrip();
 			ws.BeginStrip(false,false);
-			//ws.Add(88,-325,86,-420,"passage");
 			ws.EndStrip();
 
 			//2
