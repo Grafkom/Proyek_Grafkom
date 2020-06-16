@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Clock.
-	/// </summary>
-	public class Clock : Plantilla
+	public class Clock : Template
 	{
 		public Clock(Point3D center, double angle):base(center,angle)
 		{
@@ -32,18 +29,12 @@ namespace TareaGL
 			Gl.glColor3d(.1,0,0);
 			Glut.glutSolidTorus(3,19,30,40);
 			Glut.glutSolidTorus(4,23,10,6);
-//			Gl.glColor3d(.7,.7,.7);
-//            Glut.glutSolidCone(1,2,10,2);
 			Gl.glPopMatrix();
 		}
 
 		protected override void customRenderer() 
 		{
-//			Gl.glTranslated(0,0,(int)distance/50);
-			//Gl.glTranslated(0,0,0);
 			Gl.glCallList(this.idObject);
-//			Gl.glColor3d(1,1,1);
-//			GlUtils.PintaOrtoedro(10,10,10);
 			if (distance<700) drawTime();
 		}
 		int hours;

@@ -6,7 +6,7 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Butaca.
 	/// </summary>
-	public class Sofa:Plantilla
+	public class Sofa:Template
 	{
 		protected int puestos=1;
 		public Sofa(Point3D center, double angle,int puestos):base(center,angle,puestos)
@@ -30,28 +30,28 @@ namespace TareaGL
 			Gl.glColor3d(1,1,1);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
 			Gl.glTranslated(-l-2,0,0);
-			GlUtils.PintaOrtoedro(2,h,h);
+			GlUtils.GambarBangun(2,h,h);
 			Gl.glTranslated(2*l+4,0,0);
-			GlUtils.PintaOrtoedro(2,h,h);
+			GlUtils.GambarBangun(2,h,h);
 			Gl.glTranslated(-l-2,0,0);
 			Gl.glRotated(a,-1,0,0);
 			int i =10;
 			Gl.glTranslated(0,-1,i-10);
-			GlUtils.PintaOrtoedro(l,2,h-i);
+			GlUtils.GambarBangun(l,2,h-i);
 
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("TELA1"));
 			Gl.glTranslated(0,c,3);
-			GlUtils.PintaOrtoedro(l-1,c,h-i-4,true);
+			GlUtils.GambarBangun(l-1,c,h-i-4,true);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 			Gl.glTranslated(0,-c,-3);
 
 			Gl.glTranslated(0,h-i,-(h-i)+2);
 			Gl.glRotated(90,-1,0,0);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
-			GlUtils.PintaOrtoedro(l,2,h-i);
+			GlUtils.GambarBangun(l,2,h-i);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("TELA1"));
 			Gl.glTranslated(0,-c,3);
-			GlUtils.PintaOrtoedro(l-1,c,h-i-4,true);
+			GlUtils.GambarBangun(l-1,c,h-i-4,true);
 
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 		}
@@ -61,28 +61,28 @@ namespace TareaGL
 			Gl.glColor3d(1,1,1);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
 			Gl.glTranslated(-l-2,0,0);
-			GlUtils.PintaOrtoedro(2,h,h);
+			GlUtils.GambarBangun(2,h,h);
 			Gl.glTranslated(2*l+4,0,0);
-			GlUtils.PintaOrtoedro(2,h,h);
+			GlUtils.GambarBangun(2,h,h);
 			Gl.glTranslated(-l-2,0,0);
 			Gl.glRotated(a,-1,0,0);
 			int i =10;
 			Gl.glTranslated(0,-1,i-10);
-			GlUtils.PintaOrtoedro(l,2,h-i);
+			GlUtils.GambarBangun(l,2,h-i);
 
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("TELA1"));
 			Gl.glTranslated(0,c,3);
-			GlUtils.PintaOrtoedro(l-1,c,h-i-4,true);
+			GlUtils.GambarBangun(l-1,c,h-i-4,true);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 			Gl.glTranslated(0,-c,-3);
 
 			Gl.glTranslated(0,h-i,-(h-i)+2);
 			Gl.glRotated(90,-1,0,0);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD2"));
-			GlUtils.PintaOrtoedro(l,2,h-i);
+			GlUtils.GambarBangun(l,2,h-i);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("TELA1"));
 			Gl.glTranslated(0,-c,3);
-			GlUtils.PintaOrtoedro(l-1,c,h-i-4,true);
+			GlUtils.GambarBangun(l-1,c,h-i-4,true);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 		}
 	}

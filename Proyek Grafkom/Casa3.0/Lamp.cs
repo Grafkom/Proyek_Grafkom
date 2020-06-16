@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Lamp.
-	/// </summary>
 	public class Lamp : GlObject
 	{
 		protected Point3D position = new Point3D(0,0,0);
