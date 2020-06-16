@@ -3,7 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-    public class Piring2 : Plantilla
+    public class Piring2 : Template
     {
 		public Piring2(Point3D center, double angle) : base(center, angle) { }
 

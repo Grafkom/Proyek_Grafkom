@@ -3,9 +3,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Wall.
-	/// </summary>
 	public abstract class Wall : GlObject
 	{
 		public double Deep=1;
@@ -58,80 +55,37 @@ namespace TareaGL
 		protected Point3D dirFrom;
 		protected Point3D dirTo;
 
-		public override Point3D ColisionNormal(Point3D punto, Point3D direccion, double radius) 
+		public override Point3D Colisionrulel(Point3D point, Point3D direccion, double radius) 
 		{
-			//Console.WriteLine("Llamando a CN de wall");
-			Point3D punto2 = punto+direccion;
-			if (punto2.Y<this.bottom || punto2.Y>this.bottom+this.height)
-				return new Point3D(0,0,0); //No hay colision
-			punto2 = new Point3D(punto2.X,0,punto2.Z);
-//			if ((punto2-from).Norm > width || (punto2-to).Norm>width)
-//				return new Point3D(0,0,0);
-			if (((to-from).Norm<radius/2)) //La pared es muy pequenna... Ignorare la colision con esta pared.
+			Point3D point2 = point+direccion;
+			if (point2.Y<this.bottom || point2.Y>this.bottom+this.height)
+				return new Point3D(0,0,0); 
+			point2 = new Point3D(point2.X,0,point2.Z);
+			if (((to-from).Norm<radius/2)) 
 				return new Point3D(0,0,0);
-			if ((punto2-(to-from).Scaled(.5)-from).Norm>(width+radius)/2) //No puede haber colision
+			if ((point2-(to-from).Scaled(.5)-from).Norm>(width+radius)/2) 
 				return new Point3D(0,0,0);
 			Point3D walldir = (to-from).Normalized;
-			Point3D exto = to+walldir.Scaled(1.1);//radius/2);
-			Point3D exfrom = from-walldir.Scaled(1.1);//radius/2);
-			Point3D pos = (punto2-exfrom).Normalized;
+			Point3D exto = to+walldir.Scaled(1.1);
+			Point3D exfrom = from-walldir.Scaled(1.1);
+			Point3D pos = (point2-exfrom).Normalized;
 			double d=0;
 
-			#region punto2 esta antes o despues de la pared. No hay colision.
-			if (walldir.ScalarProduct(pos)<0) // El punto esta antes de from
-			{
-//				d=(punto2-frome).Norm;
-//				if (d<radius)
-//					return pos.Scaled(radius-d);
-//				else 
-					return new Point3D(0,0,0);
-			}
-			if ((punto2-exto).ScalarProduct(-walldir)<0) // El punto esta despues del to
-			{
-//				d=(punto2-to).Norm;
-//				if (d<radius)
-//					return (punto2-to).Normalized.Scaled(radius-d);
-//				else 
-					return new Point3D(0,0,0);
-			}
-			#endregion
 			
 			Point3D referencia;
-			if ((from-punto2).Norm>(to-punto2).Norm)
+			if ((from-point2).Norm>(to-point2).Norm)
 				referencia=from;
 			else
 				referencia=to;
 
 			Point3D pr = (to-from).CrossProduct(new Point3D(0,1,0)).Normalized;
-			double d1 = this.distancePointRect(punto.X,punto.Z,from.X,from.Z,to.X,to.Z);
-			double d2 = this.distancePointRect(punto2.X,punto2.Z,from.X,from.Z,to.X,to.Z);
-			if (d1*d2<0) //semiplanos distintos, hay colision
-				//Console.WriteLine("d1: "+d1+" d2: "+d2);
+			double d1 = this.distancePointRect(point.X,point.Z,from.X,from.Z,to.X,to.Z);
+			double d2 = this.distancePointRect(point2.X,point2.Z,from.X,from.Z,to.X,to.Z);
+			if (d1*d2<0) 
 				return pr.Scaled(-Math.Sign(d2)*radius-d2);
-				//return pr.Scaled(radius+d2);
-				//Console.WriteLine("Semiplanos distintos, hay colision");
 			else 
 				if (Math.Abs(d2)<radius)
 					return pr.Scaled(Math.Sign(d2)*radius-d2);
-//			Point3D pr=this.planeRot(to-from,90).Normalized;;
-//
-//			Point3D punto1 = new Point3D(punto.X,0,punto.Z);
-//			d=(punto1-referencia).Norm;			
-//			Point3D v2 = pr.Scaled(d*pr.ScalarProduct((punto2-referencia).Normalized));
-//			Point3D v1 = pr.Scaled(d*pr.ScalarProduct((punto1-referencia).Normalized));					
-//			if (v1.Normalized.ScalarProduct(v2.Normalized)>0) // Estan en el mismo semiplano
-//			{
-////				double distance = distancePointRect(punto2.X,punto2.Z,to.X,to.Z,from.X,from.Z);
-//				if (v2.Norm<radius)
-//					return v2.Normalized.Scaled(radius-v2.Norm);
-////				if (Math.Abs(distance)<radius)
-////					return pr.Normalized.Scaled(radius+distance);
-//				else return new Point3D(0,0,0);
-//			}
-//			else //Estan en semiplanos distintos ==> hubo colision
-//			{
-//				return -v2.Normalized.Scaled(radius)-v2;
-//			}
 			return new Point3D(0,0,0);
 		}
 		protected double distancePointRect(double x1, double y1, double x2,double y2, double x3, double y3) 

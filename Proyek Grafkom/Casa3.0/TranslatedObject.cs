@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for TranslatedObject.
-	/// </summary>
 	public class TranslatedObject: GlObject, InteractiveObject
 	{
 		protected Point3D origin;
@@ -21,9 +18,9 @@ namespace TareaGL
 			obj.Prepare(observer);
 			observer.Camera.Translate(origin);
 		}
-		public override Point3D ColisionNormal (Point3D point, Point3D direction, double radius) 
+		public override Point3D Colisionrulel (Point3D point, Point3D direction, double radius) 
 		{
-			return obj.ColisionNormal(point.Translated(-origin),direction,radius);
+			return obj.Colisionrulel(point.Translated(-origin),direction,radius);
 		}
 		public override void Render() 
 		{

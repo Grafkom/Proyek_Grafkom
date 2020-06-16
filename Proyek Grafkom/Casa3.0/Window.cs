@@ -3,9 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Window.
-	/// </summary>
+	
 	public abstract class Window:GlObject
 	{
 		protected Point3D start=new Point3D(0,0,0);

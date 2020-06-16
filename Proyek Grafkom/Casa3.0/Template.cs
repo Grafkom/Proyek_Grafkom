@@ -7,7 +7,7 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Plantilla.
 	/// </summary>
-	public abstract class Plantilla : GlObject
+	public abstract class Template : GlObject
 	{
 		protected int idObject = -1;
 		protected Point3D center;
@@ -19,7 +19,7 @@ namespace TareaGL
 		public virtual double YInc {get { return (yInc==double.MinValue)?Height/2:yInc;}}
 
 		protected virtual void setInitialParams(object[] InitialParams) {;}
-		public Plantilla(Point3D center , double angle, params object[] InitialParams)
+		public Template(Point3D center , double angle, params object[] InitialParams)
 		{
 			this.angle = angle;
 			this.center=center;
