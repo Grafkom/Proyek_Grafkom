@@ -3,16 +3,11 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for MarcadorDeOrigen.
-	/// </summary>
-	public class MarcadorDeOrigen:GlObject
+	
+	public class Original:GlObject
 	{
-		public MarcadorDeOrigen()
+		public Original()
 		{
-			//
-			// TODO: Add constructor logic here
-			//
 		}
 		public override void Render() 
 		{

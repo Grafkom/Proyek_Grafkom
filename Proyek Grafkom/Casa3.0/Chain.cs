@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Chain.
-	/// </summary>
 	public class Chain : GlObject
 	{
 		protected Point3D position;
@@ -40,7 +37,6 @@ namespace TareaGL
 			Gl.glTranslated(position.X,position.Y+yeslabon,position.Z);
 			Gl.glColor3d(128/256.0,64/256.0,64/256.0);
 			int cantidadEslabones = (int)Math.Ceiling(length/(yeslabon-breadth));
-			//for (double d =0; d <= length; d+=yeslabon+breadth)
 			for (int i =0; i < cantidadEslabones; i++)
 			{
 				Gl.glTranslated(0,-yeslabon+breadth,0);

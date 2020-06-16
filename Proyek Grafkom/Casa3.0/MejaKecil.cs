@@ -3,16 +3,13 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Mesita.
-	/// </summary>
-	public class Mesita:Plantilla
+	public class MejaKecil:Template
 	{
-		public Mesita(Point3D center,double angle):base(center,angle){
+		public MejaKecil(Point3D center,double angle):base(center,angle){
 			this.height=58;
 		}
 
-		public Mesita(Point3D center):this(center,0){}
+		public MejaKecil(Point3D center):this(center,0){}
 
 		protected override void Particular()
 		{

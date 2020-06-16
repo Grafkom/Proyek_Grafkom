@@ -4,9 +4,6 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for WindowedWall.
-	/// </summary>
 	public class WindowedWall : Wall
 	{
 		protected double windowBase =105;

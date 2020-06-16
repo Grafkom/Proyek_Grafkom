@@ -4,9 +4,6 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for GlassWindow.
-	/// </summary>
 	public class GlassWindow:Window,MetricObject
 	{
 		protected static int id = -1;
@@ -97,7 +94,6 @@ namespace TareaGL
 			Gl.glEnd();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 
-			//cristal
 			int cullFace=0;
 			Gl.glGetBooleanv(Gl.GL_CULL_FACE,out cullFace);
 			Gl.glDisable(Gl.GL_CULL_FACE);

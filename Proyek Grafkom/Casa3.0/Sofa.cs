@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Butaca.
-	/// </summary>
-	public class Sofa:Plantilla
+	public class Sofa:Template
 	{
 		protected int puestos=1;
 		public Sofa(Point3D center, double angle,int puestos):base(center,angle,puestos)

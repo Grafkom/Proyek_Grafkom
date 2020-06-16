@@ -5,13 +5,10 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Avatar.
-	/// </summary>
 	public class Avatar
 	{
 		protected bool ghostMode=false;
-		public double StrafeSpeed=300; /* Velocidad en unidades por segundo */
+		public double StrafeSpeed=300;
         protected GlControl ViewPort;
 		protected Point3D origin = new Point3D(103,100,700);
 		protected Point3D center = new Point3D(179,100,318);
@@ -222,7 +219,7 @@ namespace TareaGL
 				moveDir+=ColisionNormal;
 				ColisionNormal=World.ColisionNormal(camera.Origin,moveDir,30);
 			}
-			if (ColisionNormal.Norm<.5 && moveDir.Norm>1) //No me movere si la distancia a moverme es muy pequenna
+			if (ColisionNormal.Norm<.5 && moveDir.Norm>1)
 				camera.Translate(moveDir);
 			WinApi.SetCursorPos(xcenter,ycenter);
 		}

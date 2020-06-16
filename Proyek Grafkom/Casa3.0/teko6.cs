@@ -3,10 +3,8 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for MesetaConFregadero.
-	/// </summary>
-	public class teko6:Plantilla
+	
+	public class teko6:Template
 	{
 
 		protected override void setInitialParams(object[] InitialParams) 
@@ -40,34 +38,7 @@ namespace TareaGL
 			double d = (int)this.distance / 50;
 			Gl.glBegin(Gl.GL_QUADS);
 
-			//pared
-
-			//Gl.glNormal3d(0,0,1);Gl.glTexCoord2d(0,0);Gl.glVertex3d(0,alto*100,-ancho*100+d);
-			//Gl.glNormal3d(0,0,1);Gl.glTexCoord2d(12,0);Gl.glVertex3d(largo*100,alto*100,-ancho*100+d);
-			//Gl.glNormal3d(0,0,1);Gl.glTexCoord2d(12,5);Gl.glVertex3d(largo*100,(alto+0.5)*100,-ancho*100+d);
-			//Gl.glNormal3d(0,0,1);Gl.glTexCoord2d(0,5);Gl.glVertex3d(0,(alto+0.5)*100,-ancho*100+d);
-
-			//pared derecha
-
-			//Gl.glNormal3d(-1,0,0);Gl.glTexCoord2d(0,0);Gl.glVertex3d(largo*100-d,alto*100,-ancho*100);
-			//Gl.glNormal3d(-1,0,0);Gl.glTexCoord2d(5,0);Gl.glVertex3d(largo*100-d,alto*100,0);
-			//Gl.glNormal3d(-1,0,0);Gl.glTexCoord2d(5,5);Gl.glVertex3d(largo*100-d,(alto+0.5)*100,0);
-			//Gl.glNormal3d(-1,0,0);Gl.glTexCoord2d(0,5);Gl.glVertex3d(largo*100-d,(alto+0.5)*100,-ancho*100);
-
-			//pared izquierda
-
-			//Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(0,5);Gl.glVertex3d(d,(alto+0.5)*100,-ancho*100);
-			//Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(5,5);Gl.glVertex3d(d,(alto+0.5)*100,0);
-			//Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(5,0);Gl.glVertex3d(d,alto*100,0);
-			//Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(0,0);Gl.glVertex3d(d,alto*100,-ancho*100);
-
-			//if (lead>0) 
-			//{
-			// Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(0,6);Gl.glVertex3d(d,(alto)*100,0);
-			// Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(lead*5,6);Gl.glVertex3d(d,(alto)*100,lead*100);
-			// Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(lead*5,0);Gl.glVertex3d(d,0,lead*100);
-			// Gl.glNormal3d(1,0,0);Gl.glTexCoord2d(0,0);Gl.glVertex3d(d,0,0);
-			//}
+			
 
 			Gl.glEnd();
 		}

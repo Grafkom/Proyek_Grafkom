@@ -5,10 +5,8 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Puerta.
-	/// </summary>
-	public class Puerta : GlObject, InteractiveObject
+	
+	public class Pintu : GlObject, InteractiveObject
 	{
 		protected int idPuerta = -1;
 		protected static int textureIndex=-1;
@@ -21,7 +19,7 @@ namespace TareaGL
 				return SoloMarco || this.aperturaActual==this.Apertura && this.Apertura>0; 
 			}
 		}
-		public Puerta():this(new Point3D(0,0,0),0)
+		public Pintu():this(new Point3D(0,0,0),0)
 		{
 		}
 		protected Point3D position;
@@ -44,7 +42,7 @@ namespace TareaGL
 				Gl.glEndList();
 			}
 		}
-		public Puerta(Point3D position, double angle)
+		public Pintu(Point3D position, double angle)
 		{
 			textureIndex=GlUtils.Texture("ROSEGOLD");
 			texturaBisagra=GlUtils.Texture("BISAGRA");
@@ -90,7 +88,6 @@ namespace TareaGL
 		}
 		public override void Render () 
 		{
-			//Gl.glEnable(Gl.GL_CULL_FACE);
 			#region Una esfera flotando en el centro
 #if showCenterPoint
 			Glu.GLUquadric qua = Glu.gluNewQuadric();
@@ -165,19 +162,15 @@ namespace TareaGL
 					Gl.glTranslated(border+.5,0,-deep/2+.5);
 				else 
 					Gl.glTranslated(border+.5,0,deep/2-.5);
-//				pintaPuerta();
 				Gl.glCallList(this.idPuerta+1);
 				Gl.glPushMatrix();
 				Gl.glColor3d(1,1,1);
 				Gl.glRotated(reversed?-this.aperturaActual:this.aperturaActual,0,1,0);
-				//if (far) Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,1);
 				Gl.glCallList(idPuerta);
-				//if (far) Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,0);
 				Gl.glPopMatrix();
 				Gl.glPopMatrix();
 			}
 			Gl.glPopMatrix();
-			//Gl.glDisable(Gl.GL_CULL_FACE);
 		}
 		protected void pintaBisagra() 
 		{
@@ -286,11 +279,6 @@ namespace TareaGL
 			Gl.glVertex3d(x,y,-z);
 			Gl.glVertex3d(-x,y,-z);
 
-//			Gl.glNormal3d(0,-1,0);
-//			Gl.glVertex3d(-x,-y,z);
-//			Gl.glVertex3d(x,-y,z);
-//			Gl.glVertex3d(x,-y,-z);
-//			Gl.glVertex3d(-x,-y,-z);
 			Gl.glEnd();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,this.texturaPuerta);
 		}
@@ -301,7 +289,6 @@ namespace TareaGL
 			Gl.glDisable(Gl.GL_CULL_FACE);
 
 			Glu.GLUquadric q = Glu.gluNewQuadric();
-			//Gl.glColor3d(1,1,1);
 			Gl.glColor3d(1,1,0);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,this.texturaKnob);
 			Glu.gluQuadricTexture(q,Gl.GL_TRUE);
@@ -333,7 +320,7 @@ namespace TareaGL
 
 		protected DateTime inicio;
 		protected double aperturaActual;
-		protected double velocidad=60; //Grados por segundo
+		protected double velocidad=60;
 		protected bool opening=false;
 		protected bool closing=false;
 
@@ -344,12 +331,12 @@ namespace TareaGL
 			if (HasActionFor(c) && this.Apertura!=0) 
 			{
 				this.inicio=DateTime.Now;
-				if (this.aperturaActual==this.aperturaActual) //Hay que cerrar
+				if (this.aperturaActual==this.aperturaActual)
 				{
 					closing=true;
 					opening=false;
 				}
-				if (this.aperturaActual==0) //Hay que abrir
+				if (this.aperturaActual==0)
 				{
 					closing=false;
 					opening=true;

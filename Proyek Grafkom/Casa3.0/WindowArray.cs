@@ -3,18 +3,13 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for WindowArray.
-	/// </summary>
 	public class WindowArray : Window
 	{
-		//protected Window[] ventanas;
 		protected GlObjectList ventanas=new GlObjectList();
 		protected double width=0;
 		protected double height=0;
 		public WindowArray(params Window[] ventanas)
 		{
-			//this.ventanas=ventanas;
 			foreach (Window w in ventanas)
 			{
 				this.ventanas.Add(w);

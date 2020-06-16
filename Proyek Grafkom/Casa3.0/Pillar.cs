@@ -3,7 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	public class Pillar : Plantilla
+	public class Pillar : Template
 	{
 		public Pillar(Point3D center,double angle):base(center,angle){}
 

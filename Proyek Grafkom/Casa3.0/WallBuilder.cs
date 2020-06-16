@@ -2,9 +2,6 @@ using System;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for WallBuilder.
-	/// </summary>
 	public class WallBuilder
 	{
 		public WallBuilder()

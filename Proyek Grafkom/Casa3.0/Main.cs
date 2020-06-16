@@ -9,9 +9,6 @@ using System.IO;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Main.
-	/// </summary>
 	public class MainClass
 	{
 
@@ -39,7 +36,6 @@ namespace TareaGL
             casa.Add(new Lamp(new Point3D(300,270,350),70));
             casa.Add(new Lamp(new Point3D(350,270,-500),70));
             casa.Add(new Lamp(new Point3D(350,270,-150),70));
-            //casa.Add(new Lamp(new Point3D(-120,270,-550),70));
             casa.Add(new Lamp(new Point3D(-220,270,-300),70));
             casa.Add(new Lamp(new Point3D(-180,270,90),70));
 
@@ -61,12 +57,6 @@ namespace TareaGL
 			casa.Add(new teko5(new Point3D(430, 4, -638), 180));
 			casa.Add(new teko2(new Point3D(470, 24, -638), 180));
 			casa.Add(new teko4(new Point3D(470, -18, -638), 180));
-
-			//casa.Add(new RakPajangan(new Point3D(-145, 0, -635), 180));
-			//casa.Add(new RakPajangan(new Point3D(-145, RakPajangan.Height, -635), 0));
-			//casa.Add(new teko6(new Point3D(-115, 4, -638), 180));
-			//casa.Add(new teko7(new Point3D(-75, 24, -638), 180));
-			//casa.Add(new teko1(new Point3D(-75, -18, -638), 180));
 
 			casa.Add(new RakPajangan(new Point3D(-235, 0, -635), 180));
 			casa.Add(new RakPajangan(new Point3D(-235, RakPajangan.Height, -635), 0));
@@ -127,15 +117,10 @@ namespace TareaGL
 			casa.Add(new Pillar(new Point3D(290,60,-610),180));
 			casa.Add(new Pillar(new Point3D(300,70,-620),180));
 
-			//casa.Add(new Cama(new Point3D(370,0,-250),0,100,70));
-			//casa.Add(new Cama(new Point3D(370,0,-480),0,100,60));
-			//casa.Add(new Cama(new Point3D(-210,0,-420),0,90,40));
-			//casa.Add(new Rak(new Point3D(-210,170,-108)));
-			Plantilla obj = new Meja(new Point3D(380,0,200));
+			
+			Template obj = new Meja(new Point3D(380,0,200));
 			casa.Add(obj);
 
-			//casa.Add(new Painting(new Point3D(-90,100,150),90));
-			//casa.Add(new Painting(new Point3D(-30,100,350),140));
 
 			casa.Add(new Painting(new Point3D(-240,100,80),110));
 			casa.Add(new Painting(new Point3D(-270,100,-20),110));
@@ -174,8 +159,7 @@ namespace TareaGL
 			obj = new MejaDisplay(new Point3D(330,0,-70),180);
 			casa.Add(obj);
 			
-			casa.Add(new Sofa(new Point3D(350, 0, -280), 0, 2));
-			//casa.Add(new teko(new Point3D(-307,0,-64),0));			
+			casa.Add(new Sofa(new Point3D(350, 0, -280), 0, 2));		
 
 			
 			GlObject c = new TranslatedObject(new Point3D(0,0,-70),casa);
@@ -195,9 +179,6 @@ namespace TareaGL
 
 
 	}
-
-
-
 
 }
 

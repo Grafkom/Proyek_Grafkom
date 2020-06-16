@@ -4,15 +4,12 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for WindowedWall.
-	/// </summary>
 	public class DoorWall : Wall
 	{
 		protected SolidWall up;
 		protected SolidWall left;
 		protected SolidWall right;
-		protected Puerta puerta;
+		protected Pintu puerta;
 		public DoorWall(Point3D from, Point3D to, double bottom, double height):this(from,to,bottom,height,false,false,true)
 		{
 		}
@@ -20,13 +17,12 @@ namespace TareaGL
 		public DoorWall(Point3D from, Point3D to, double bottom, double height,bool soloMarco,bool reversed, bool opened):base(from,to,bottom,height)
 		{
 			Point3D dir = (to-from);
-			puerta = new Puerta();
+			puerta = new Pintu();
 			puerta.Angle= GlUtils.VectorAngle2D(dir);
 			puerta.reversed=reversed;
 			if (opened) puerta.Apertura=85;
 			else puerta.Apertura=0;
 
-			//puerta.Width = dir.Norm;
 			double dist = dir.Norm;
 			if (dist<=puerta.Width)
 			{

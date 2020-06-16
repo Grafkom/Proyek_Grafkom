@@ -5,9 +5,7 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Casa2.
-	/// </summary>
+	
 	public class Museum2: GlObject
 	{
 		protected WallStrip ws;
@@ -121,9 +119,8 @@ namespace TareaGL
 			ws.AddTo(126,-5); // Idealmente, esta seria otro tipo de pared, "walk in closet" o algo asi.
 			ws.EndStrip();
 			#endregion
-			//Puerta del banno
+			
 			ws.BeginStrip(false,false);
-			//ws.Add(10,-480,-103,-480,"passage");
 			ws.EndStrip();
 		}
 		public override void Split(ArrayList far, ArrayList near) 
@@ -136,20 +133,15 @@ namespace TareaGL
 		}
 		public override void Prepare (Avatar observer) 
 		{
-//			observer.Translate(-center);
 			piso.Prepare(observer);
 			ws.Prepare(observer);
 			techo.Prepare(observer);
-//			observer.Translate(center);
 		}
 		public override void Render() 
 		{
-//			Gl.glPushMatrix();
-//			Gl.glTranslated(center.X,center.Y,center.Z);
 			ws.Render();
 			piso.Render();
 			techo.Render();
-//			Gl.glPopMatrix();
 		}
 		public override void FindTargetsFor(char c, ArrayList result) 
 		{
@@ -187,8 +179,6 @@ namespace TareaGL
 		Point3D camara;
 		public override void Prepare (Avatar observer)
 		{
-			//Parche: pondre a las normales siempre apuntando hacia la camara,
-			//que es donde esta la fuente de luz.
 			this.camara=observer.Origin;
 		}
 		public override void Render ()
@@ -217,25 +207,21 @@ namespace TareaGL
 			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z1);
 
-			//Gl.glNormal3d(1,0,-1);
 			Gl.glNormal3dv((camara-(new Point3D(x2,-height,z1))).Normalized.Coords);
 			Gl.glVertex3d(x2,-height,z1);
 			Gl.glNormal3dv((camara-(new Point3D(x2,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z1);
 
-			//Gl.glNormal3d(1,0,1);
 			Gl.glNormal3dv((camara-(new Point3D(x2,-height,z2))).Normalized.Coords);
 			Gl.glVertex3d(x2,-height,z2);
 			Gl.glNormal3dv((camara-(new Point3D(x2,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z2);
 
-			//Gl.glNormal3d(-1,0,1);
 			Gl.glNormal3dv((camara-(new Point3D(x1,-height,z2))).Normalized.Coords);
 			Gl.glVertex3d(x1,-height,z2);
 			Gl.glNormal3dv((camara-(new Point3D(x1,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z2);
 
-			//Gl.glNormal3d(-1,0,-1);
 			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x1,-height,z1);
 			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
@@ -274,8 +260,6 @@ namespace TareaGL
 		bool pintaAbajo=true;
 		public override void Prepare (Avatar observer)
 		{
-			//Parche: pondre a las normales siempre apuntando hacia la camara,
-			//que es donde esta la fuente de luz.
 			this.camara=observer.Origin;
 			pintaAbajo = camara.Y<bottom+height/2;
 			pintaArriba = camara.Y>bottom+height/2;
@@ -365,7 +349,6 @@ namespace TareaGL
 			if (destino.Z<z1-radio || destino.Z>z2+radio) return new Point3D(0,0,0);
 			if ((destino.Y<this.bottom-radio && punto.Y<this.bottom-radio) || 
 				(destino.Y>this.bottom+radio && punto.Y>this.bottom+radio)) return new Point3D(0,0,0);
-			//return new Point3D(0,-direccion.Y/Math.Abs(direccion.Y)*,0);
 			if (direccion.Y>0 && punto.Y<bottom)
 				return new Point3D(0,-destino.Y+bottom-radio,0);
 			if (direccion.Y<0 && punto.Y>bottom) 

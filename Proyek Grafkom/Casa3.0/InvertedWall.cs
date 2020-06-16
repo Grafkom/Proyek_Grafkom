@@ -3,9 +3,6 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for InvertedWall.
-	/// </summary>
 	public class InvertedWall:Wall
 	{
 		protected Wall real;

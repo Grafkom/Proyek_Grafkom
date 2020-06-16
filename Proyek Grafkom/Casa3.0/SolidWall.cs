@@ -5,9 +5,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for SolidWall.
-	/// </summary>
 	public class SolidWall : Wall
 	{
 		protected double[] wallColor=new double[]{1f,1f,1f};
@@ -34,7 +31,6 @@ namespace TareaGL
 		{
 			set 
 			{
-//				this.closeFrom = (value==null);
 				if (value==null)
 					this.dirFrom = this.planeRot(to-from,90).Normalized;
 				else 
@@ -51,7 +47,6 @@ namespace TareaGL
 		{
 			set 
 			{
-//				this.closeTo = (value==null);
 				if (value==null)
 					this.dirTo = this.planeRot(to-from,90).Normalized;
 				else 
@@ -116,18 +111,15 @@ namespace TareaGL
 			//Gl.glEnable(Gl.GL_CULL_FACE);
 #endif
 			Gl.glColor3d(1,1,1);
-			//Gl.glColor3dv(this.wallColor);;
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,texture);
 			Gl.glBegin(Gl.GL_QUADS);
 			if (showFront) 
 			{
 				Gl.glNormal3dv(this.frontSideNormal.Coords);
-				//Gl.glNormal3dv((this.frontSideNormal+new Point3D(0,1,0)).Normalized.Coords);
 				Gl.glTexCoord2d(0,0);
 				Gl.glVertex3dv(this.frontDownLeft.Coords);
 				Gl.glTexCoord2d(width/100,0);
 				Gl.glVertex3dv(this.frontDownRight.Coords);
-				//Gl.glNormal3dv((this.frontSideNormal+new Point3D(0,-1,0)).Normalized.Coords);
 				Gl.glTexCoord2d(width/100,height/100);
 				Gl.glVertex3dv(this.frontUpRight.Coords);
 				Gl.glTexCoord2d(0,height/100);
@@ -136,12 +128,10 @@ namespace TareaGL
 			if (showBack) 
 			{
 				Gl.glNormal3dv((-this.frontSideNormal).Coords);
-				//Gl.glNormal3dv((-this.frontSideNormal+new Point3D(0,1,0)).Normalized.Coords);
 				Gl.glTexCoord2d(width/100,0);
 				Gl.glVertex3dv(this.backDownRight.Coords);
 				Gl.glTexCoord2d(0,0);
 				Gl.glVertex3dv(this.backDownLeft.Coords);
-				//Gl.glNormal3dv((-this.frontSideNormal+new Point3D(0,-1,0)).Normalized.Coords);
 				Gl.glTexCoord2d(0,height/100);
 				Gl.glVertex3dv(this.backUpLeft.Coords);
 				Gl.glTexCoord2d(width/100,height/100);

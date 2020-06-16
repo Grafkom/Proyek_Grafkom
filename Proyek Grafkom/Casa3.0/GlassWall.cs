@@ -4,9 +4,6 @@ using System.Collections;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for GlassWall.
-	/// </summary>
 	public class GlassWall:Wall, MetricObject
 	{
 		protected int divTexture;
@@ -34,14 +31,11 @@ namespace TareaGL
 		{
 			muro.Prepare(observer);
 			radius = Math.Ceiling(this.DistanceTo(observer.Origin)/700);
-			//radius = this.DistanceTo(observer.Origin)>1000 ? 2:1;
 		}
 		double radius = 1;
 		public override void Render () 
 		{
-//			Gl.glColor3d(1,1,1);
 			muro.Render();
-			//pintaCristal();
 			Gl.glCallList(this.cristalId);
 		}
 		protected void pintaCristal() 
@@ -112,12 +106,10 @@ namespace TareaGL
 		public override void Split(ArrayList far, ArrayList near)
 		{
 			near.Add(this);
-			//far.Add(muro);
 		}
 		public double DistanceTo(Point3D other) 
 		{
 			return (other-(to-from).Scaled(.5)-from).Norm;
-			//return (other-from).Norm;
 		}
 		public override void CloseTo(bool close) 
 		{

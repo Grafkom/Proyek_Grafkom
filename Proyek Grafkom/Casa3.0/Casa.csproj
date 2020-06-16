@@ -107,9 +107,6 @@
     <Compile Include="Sofa.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cama.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Camera.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -164,7 +161,7 @@
     <Compile Include="Main.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MarcadorDeOrigen.cs">
+    <Compile Include="Original.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Meja.cs">
@@ -173,13 +170,13 @@
     <Compile Include="teko.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Mesita.cs">
+    <Compile Include="MejaKecil.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MejaDisplay.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ObjetoDePrueba.cs">
+    <Compile Include="TestObject.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Piring1.cs" />
@@ -189,7 +186,7 @@
     <Compile Include="Piring5.cs" />
     <Compile Include="Piring6.cs" />
     <Compile Include="Piring7.cs" />
-    <Compile Include="Plantilla.cs">
+    <Compile Include="Template.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Piring.cs">
@@ -198,7 +195,7 @@
     <Compile Include="Point3D.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Puerta.cs">
+    <Compile Include="Pintu.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Pillar.cs">

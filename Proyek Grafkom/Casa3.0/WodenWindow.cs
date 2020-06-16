@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for WodenWindow.
-	/// </summary>
 	public class WodenWindow:Window,InteractiveObject
 	{
 		protected static int id = -1;
@@ -41,35 +38,7 @@ namespace TareaGL
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,textureIndex);
 			GlUtils.PintaOrtoedro(45,10,2,true);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
-//			Gl.glBegin(Gl.GL_QUAD_STRIP);
-//			Gl.glBindTexture(Gl.GL_TEXTURE_2D,textureIndex);
-//			Gl.glNormal3d(-0.57,0.57,0.57);Gl.glTexCoord2d(0,1);Gl.glVertex3d(-0.45*100, 0.1*100, 0.02*100);
-//			Gl.glNormal3d(-0.57,-0.57,0.57);Gl.glTexCoord2d(0,0);Gl.glVertex3d(-0.45*100, -0.1*100, 0.02*100);
-//			
-//			Gl.glNormal3d(0.57,0.57,0.57);Gl.glTexCoord2d(0.34,1);Gl.glVertex3d(0.45*100, 0.1*100, 0.02*100);
-//			Gl.glNormal3d(0.57,-0.57,0.57);Gl.glTexCoord2d(0.34,0);Gl.glVertex3d(0.45*100, -0.1*100, 0.02*100);
-//			
-//			Gl.glNormal3d(0.57,0.57,-0.57);Gl.glTexCoord2d(0.5,1);Gl.glVertex3d(0.45*100, 0.1*100, -0.02*100);
-//			Gl.glNormal3d(0.57,-0.57,-0.57);Gl.glTexCoord2d(0.5,0);Gl.glVertex3d(0.45*100, -0.1*100, -0.02*100);
-//
-//			Gl.glNormal3d(-0.57,0.57,-0.57);Gl.glTexCoord2d(0.84,1);Gl.glVertex3d(-0.45*100, 0.1*100, -0.02*100);
-//			Gl.glNormal3d(-0.57,-0.57,-0.57);Gl.glTexCoord2d(0.84,0);Gl.glVertex3d(-0.45*100, -0.1*100, -0.02*100);
-//
-//			Gl.glNormal3d(-0.57,0.57,0.57);Gl.glTexCoord2d(1,1);Gl.glVertex3d(-0.45*100, 0.1*100, 0.02*100);
-//			Gl.glNormal3d(-0.57,-0.57,0.57);Gl.glTexCoord2d(1,0);Gl.glVertex3d(-0.45*100, -0.1*100, 0.02*100);
-//
-//			Gl.glEnd();
-//			Gl.glBegin(Gl.GL_QUADS);
-//			Gl.glNormal3d(-0.57,-0.57,-0.57);Gl.glTexCoord2d(0.84,0);Gl.glVertex3d(-0.45*100, -0.1*100, -0.02*100);
-//			Gl.glNormal3d(0.57,-0.57,-0.57);Gl.glTexCoord2d(0.5,0);Gl.glVertex3d(0.45*100, -0.1*100, -0.02*100);
-//			Gl.glNormal3d(0.57,-0.57,0.57);Gl.glTexCoord2d(0.34,0);Gl.glVertex3d(0.45*100, -0.1*100, 0.02*100);
-//			Gl.glNormal3d(-0.57,-0.57,0.57);Gl.glTexCoord2d(0,0);Gl.glVertex3d(-0.45*100, -0.1*100, 0.02*100);
-//	
-//			Gl.glNormal3d(-0.57,0.57,-0.57);Gl.glTexCoord2d(0.84,1);Gl.glVertex3d(-0.45*100, 0.1*100, -0.02*100);
-//			Gl.glNormal3d(0.57,0.57,-0.57);Gl.glTexCoord2d(0.34,1);Gl.glVertex3d(0.45*100, 0.1*100, -0.02*100);
-//			Gl.glNormal3d(0.57,0.57,0.57);Gl.glTexCoord2d(0.34,1);Gl.glVertex3d(0.45*100, 0.1*100, 0.02*100);
-//			Gl.glNormal3d(-0.57,0.57,0.57);Gl.glTexCoord2d(0,0);Gl.glVertex3d(-0.45*100, 0.1*100, 0.02*100);
-//			Gl.glEnd();
+
 		}
 		
 		protected void pintaMarco() 
@@ -144,7 +113,6 @@ namespace TareaGL
 		#endregion
 		protected void renderWindow() 
 		{
-			//Gl.glEnable(Gl.GL_CULL_FACE);
 			Gl.glColor3d(0.95,0.95,0.95);
 			int id = Gl.glGenLists(1);
 			Gl.glNewList(id,Gl.GL_COMPILE);
@@ -159,7 +127,6 @@ namespace TareaGL
 
 			Gl.glCallList(idMarco);
 
-			//poniendo persianas
 			Gl.glPushMatrix();
 			Gl.glTranslated(0,0.2*100,0);
 			Gl.glCallList(id);
@@ -178,8 +145,6 @@ namespace TareaGL
 			Gl.glPopMatrix();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, 0);
 			Gl.glDeleteLists(id,1);
-			//Gl.glDisable(Gl.GL_CULL_FACE);
-//Gl.glEndList();
 		}
 
 		#region Prepare and Render
@@ -212,13 +177,7 @@ namespace TareaGL
 				this.pangle=Math.Min(pangle+angleInc,maxAngle);
 			else if (c=='a' && this.pangle>this.minAngle)
 				this.pangle=Math.Max(pangle-angleInc,minAngle);
-//			else GlUtils.Beep();
 		}
-//		public override void FindTargetsFor(char c, ArrayList result) 
-//		{
-//			if (this.HasActionFor(c))
-//				result.Add(this);
-//		}
 	}
 }
 

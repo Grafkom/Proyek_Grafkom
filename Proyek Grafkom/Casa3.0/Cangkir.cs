@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Vaso.
-	/// </summary>
-	public class Cangkir: Plantilla
+	public class Cangkir: Template
 	{
 		public Cangkir(Point3D center,double angle):base(center,angle){}
 

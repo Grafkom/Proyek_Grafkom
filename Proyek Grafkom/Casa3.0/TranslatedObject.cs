@@ -4,9 +4,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for TranslatedObject.
-	/// </summary>
+	
 	public class TranslatedObject: GlObject, InteractiveObject
 	{
 		protected Point3D origin;

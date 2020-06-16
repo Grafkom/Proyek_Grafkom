@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Lamp.
-	/// </summary>
 	public class Lamp : GlObject
 	{
 		protected Point3D position = new Point3D(0,0,0);
@@ -56,7 +53,6 @@ namespace TareaGL
 			Glu.GLUquadric quadric;
 			quadric = Glu.gluNewQuadric();
 			
-//			Glu.gluQuadricDrawStyle(quadric, Glu.GLU_FILL); // smooth shaded
 			Gl.glPushMatrix();
 			Gl.glTranslated(0, 0, 0);
 			#region cuerpo
@@ -88,7 +84,6 @@ namespace TareaGL
 			Gl.glPushMatrix();
 			Gl.glEnable(Gl.GL_BLEND);
 			Gl.glColor3d(.98, .58, .35);
-			//Gl.glColor3d(.32, 0, 0);
 			Gl.glClipPlane(Gl.GL_CLIP_PLANE0, plano);
 			Gl.glEnable(Gl.GL_CLIP_PLANE0);
 			Gl.glLightModeli(Gl.GL_LIGHT_MODEL_TWO_SIDE,1);

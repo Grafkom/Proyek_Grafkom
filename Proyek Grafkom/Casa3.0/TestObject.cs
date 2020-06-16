@@ -3,22 +3,13 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for ObjetoDePrueba.
-	/// </summary>
-	public class ObjetoDePrueba:GlObject
+	
+	public class TestObject:GlObject
 	{
-//		protected double h = 10;
-//		protected double d = 50;
-//		protected double w = 30;
-//		protected double l = 20;
-//		protected double e = 3;
-//		protected double a = 15;
-//		protected double p = 6;
 		protected double[][] puntos;
 		protected Point3D[] normales;
 		protected double[][] texturas;
-		public ObjetoDePrueba()
+		public TestObject()
 		{
 		}
 		double xscale;
@@ -27,7 +18,6 @@ namespace TareaGL
 		{
 			Gl.glNormal3dv(normales[i-1].Normalized.Coords);
 			Gl.glTexCoord2d(texturas[i-1][0]*xscale,texturas[i-1][1]*yscale);
-//			Gl.glTexCoord2d(texturas[i-1][0],texturas[i-1][1]);
 			Gl.glVertex3dv(puntos[i-1]);
 		}
 
@@ -48,7 +38,7 @@ namespace TareaGL
 		{
 			Point3D v1 = (new Point3D(puntos[before-1]))-new Point3D(puntos[center-1]);
 			Point3D v2 = (new Point3D(puntos[after-1]))-new Point3D(puntos[center-1]);
-			//return ((new Point3D(puntos[before]))-new Point3D(puntos[center])).CrossProduct(((new Point3D(puntos[before]))-new Point3D(puntos[center])));
+			
 			return v1.CrossProduct(v2).Normalized;
 		}
 		
@@ -58,10 +48,9 @@ namespace TareaGL
 			double e = 3;
 			double a = 15;
 			double p = 6;
-//			xscale=.02;//*w;
-//			yscale=.02;//*h;
-			xscale = 1;//2*w/100;
-			yscale = 1;//2*d/100;
+
+			xscale = 1;
+			yscale = 1;
 			#region arreglo de puntos
 			puntos = new double [][]
 			{
@@ -114,41 +103,6 @@ namespace TareaGL
 				};
 			#endregion
 
-//			double rx=1/(2*h+d);
-//			double ry=1/(2*h+w);
-//			#region	arreglo de texturas
-//			texturas = new double[][]
-//				{
-//					new double[]{w*rx,0},
-//					new double[]{1-w*rx,0},
-//					new double[]{1-w*rx,h*ry},
-//
-//////					new double[]{0,0},
-//////					new double[]{1,0},
-//////					new double[]{1,1},
-//
-//					new double[]{1-l*rx-w*rx,h*ry},
-//					new double[]{w+l,h},
-//
-////					new double[]{0,1},					
-//					new double[]{w,h},
-//
-//					new double[]{w+l,h+e},
-//					new double[]{1-l-w,h+e},
-//					new double[]{w+l,h+e+a},
-//					new double[]{1-w-l,h+e+a},
-//					new double[]{w,h+e+a+l},
-//					new double[]{w+l,h+e+a+l},
-//					new double[]{1-w-l,h+e+a+l},
-//					new double[]{1-w,h+e+a+l},
-//					new double[]{w,1-h},
-//					new double[]{1-w,1-h},
-//					new double[]{1,0},
-//					new double[]{1,1},
-//					new double[]{h+e+a+l,.5},
-//					new double[]{h,.5},
-//			};
-//			#endregion
 
 			#region Arreglo de texturas
 			h=h/2;
@@ -191,30 +145,12 @@ namespace TareaGL
 		}
 		public void pinta() 
 		{
-//Gl.glDisable(Gl.GL_TEXTURE_2D);
-//Gl.glEnable(Gl.GL_TEXTURE_2D);
-//
+
 			Gl.glBegin(Gl.GL_TRIANGLE_FAN);
 			ponPuntos(20,1,2,3,4,5,6,1);
 			Gl.glEnd();
 
-////		Gl.glBegin(Gl.GL_QUADS);
-////		ponPuntos(1,2,3,4);
-////
-//////			Gl.glTexCoord2d(0,0);
-//////            Gl.glVertex3d(-50,100,0);
-//////			Gl.glTexCoord2d(.5,0);
-//////			Gl.glVertex3d(100,100,0);
-//////			Gl.glTexCoord2d(1,1);
-//////			Gl.glVertex3d(100,-100,0);
-//////			Gl.glTexCoord2d(0,1);
-//////			Gl.glVertex3d(-100,-100,0);
-////		Gl.glEnd();
 
-//
-//Gl.glDisable(Gl.GL_TEXTURE_2D);
-//Gl.glEnable(Gl.GL_TEXTURE_2D);
-//
 			Gl.glBegin(Gl.GL_TRIANGLE_STRIP);
 			ponPuntos(6,5,7,4,8,3);
 			Gl.glEnd();

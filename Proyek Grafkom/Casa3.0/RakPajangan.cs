@@ -4,9 +4,6 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Estante.
-	/// </summary>
 	public class RakPajangan: GlObject
 	{
 		protected static int idEstante = -1;
@@ -68,13 +65,12 @@ namespace TareaGL
 			Glu.gluDeleteQuadric(q);
 			Gl.glPopMatrix();
 #endif
-			//Gl.glEnable(Gl.GL_CULL_FACE);
+			
 			Gl.glPushMatrix();
 			Gl.glTranslated(location.X,location.Y+Height/2,location.Z+Depth/2);
 			Gl.glRotated(angle,0,1,0);
 			Gl.glCallList(idEstante);
 			Gl.glPopMatrix();
-			//Gl.glDisable(Gl.GL_CULL_FACE);
 		}
 	}
 }

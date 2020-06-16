@@ -3,7 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-    public class Piring1 : Plantilla
+    public class Piring1 : Template
     {
 		public Piring1(Point3D center, double angle) : base(center, angle) { }
 
@@ -19,10 +19,8 @@ namespace TareaGL
 			Gl.glColor3d(1, 1, 1);
 			Gl.glPushMatrix();
 			Gl.glRotated(90, 1, 4, 0);
-			//bawah piring
 			Glu.gluDisk(q, 0, 5 * 3, 20, 20);
 			Gl.glRotated(180, 1, 0, 0);
-			//pinggiran
 			Glu.gluCylinder(q, 5 * 3, 8 * 3, 3 * 3, 20, 20);
 			Gl.glTranslated(0, 0, 2.5 * 3);
 			Gl.glColor3d(0, 0, 0);

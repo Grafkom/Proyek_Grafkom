@@ -378,26 +378,20 @@ namespace TareaGL
 		public static int CreateTexture(string filename) 
 		{
 			int res; 
-			PBitmap pBitmap= new PBitmap("textures\\"+filename);			// Load the bitmap and store the data
+			PBitmap pBitmap= new PBitmap("textures\\"+filename);
 
 			Gl.glGenTextures(1, out res);
 
-			// This sets the alignment requirements for the start of each pixel row in memory.
 			Gl.glPixelStorei (Gl.GL_UNPACK_ALIGNMENT, 1);
 
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, res);
 
-			// Build Mipmaps (builds different versions of the picture for distances - looks better)
 			Glu.gluBuild2DMipmaps(Gl.GL_TEXTURE_2D, 3, pBitmap.Width, pBitmap.Height, Gl.GL_RGB, Gl.GL_UNSIGNED_BYTE, pBitmap.data);
 
 	
 			Gl.glTexParameteri(Gl.GL_TEXTURE_2D,Gl.GL_TEXTURE_MAG_FILTER,Gl.GL_LINEAR_MIPMAP_LINEAR);
 
-			// The default GL_TEXTURE_WRAP_S and ""_WRAP_T property is GL_REPEAT.
-			// We need to turn this to GL_CLAMP_TO_EDGE, otherwise it creates ugly seems
-			// in our sky box.  GL_CLAMP_TO_EDGE does not repeat when bound to an object.
-//			Gl.glTexParameteri(Gl.GL_TEXTURE_2D, Gl.GL_TEXTURE_WRAP_S, Gl.GL_CLAMP_TO_EDGE);
-//			Gl.glTexParameteri(Gl.GL_TEXTURE_2D, Gl.GL_TEXTURE_WRAP_T, Gl.GL_CLAMP_TO_EDGE);
+			
 			pBitmap=null;
 			return res;
 		}
@@ -428,8 +422,8 @@ namespace TareaGL
 				case "TECHOIN": return CreateTexture("PARED2.jpg"); break;
 				case "BISAGRA": return CreateTexture("bisagra.jpg"); break;
 				case "PUERTA": return Texture("WOOD2"); break;
-				case "KNOB": return Texture("WOOD1"); break; //CreateTexture("madera1B.jpg"); break;
-				case "ESTANTE" : return Texture("WOOD2");//CreateTexture("MADERA6.jpg"); break;
+				case "KNOB": return Texture("WOOD1"); break;
+				case "ESTANTE" : return Texture("WOOD2");
 				case "COLCHON": return CreateTexture("tela1.jpg");
 				case "ALUMINIO": return CreateTexture("ALUMINIO.jpg"); break;
 				case "AZULEJO": return CreateTexture("AZULEJO.jpg"); break;
@@ -453,12 +447,6 @@ namespace TareaGL
 		}
 		
 		
-		/* 
-		 * Calcula el angulo que forma la proyeccion de vector
-		 * en el plano xz con el eje x. El angulo entre (1,0,0)
-		 * y (0,0,1) es de 90, el angulo entre (0,0,1) y
-		 * (1,0,0) es de 270.
-		 * */
 		public static double VectorAngle2D(Point3D vector) 
 		{
 			Point3D dir = (new Point3D(vector.X,0,vector.Z)).Normalized;
@@ -498,18 +486,10 @@ namespace TareaGL
 			BitmapData bmd = bmp.LockBits(new Rectangle(0,0,Width,Height),ImageLockMode.ReadOnly, bmp.PixelFormat);
 			data=new byte[Width*Height*bytesPerPixel];
 
-			/* Aparentemente se obtienen los valores de abajo hacia arriba 
-			 * (en lugar de de arriba hacia abajo - esto podria ser)
-			 * lio de OpenGl y no de c#, y en formato BGR en lugar de RGB (???).
-			 * Por ello es que lleno el arreglo empezando por la ultima
-			 * linea, y al final lo recorro nuevamente inviritiendo
-			 * los bytes de 3 en 3.
-			 */
 
 			for(int i=0; i<bmd.Height; i++)
 			{
 				int y=bmd.Height-i-1;
-				//byte* row=(byte *)bmd.Scan0+(i*bmd.Stride);
 				IntPtr row = new IntPtr(bmd.Scan0.ToInt32()+i*bmd.Stride);
 				System.Runtime.InteropServices.Marshal.Copy(row,data,Width*y*bytesPerPixel,Width*bytesPerPixel);
 			}

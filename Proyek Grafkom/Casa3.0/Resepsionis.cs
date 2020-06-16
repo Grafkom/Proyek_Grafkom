@@ -2,10 +2,7 @@ using System;
 using Tao.OpenGl;
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for EstanteHorizontal.
-	/// </summary>
-	public class Resepsionis:Plantilla
+	public class Resepsionis:Template
 	{
 		public Resepsionis(Point3D position, double angle):base(position,angle)
 		{
@@ -26,7 +23,6 @@ namespace TareaGL
 			Gl.glTranslated(-103.5,0,-2);
 			GlUtils.PintaOrtoedro(82,1,20);
 			Gl.glTranslated(0,-20,2);
-			//Gl.glPopMatrix();
 			GlUtils.PintaOrtoedro(105,1.5,33);
 			Gl.glTranslated(0,70,0);
 			GlUtils.PintaOrtoedro(105,1.5,33);
@@ -45,19 +41,15 @@ namespace TareaGL
 			Gl.glColor3d(.3,.3,.3);
 			Gl.glTranslated(-70,-35,15);
 			Gl.glRotated(90,1,0,0);
-			//Glu.gluCylinder(q,5,2,20,20,20);
 			Gl.glRotated(-90,1,0,0);
 			Gl.glTranslated(0,0,-30);
 			Gl.glRotated(90,1,0,0);
-			//Glu.gluCylinder(q,5,2,20,20,20);
 			Gl.glRotated(-90,1,0,0);
 			Gl.glTranslated(140,0,0);
 			Gl.glRotated(90,1,0,0);
-			//Glu.gluCylinder(q,5,2,20,20,20);
 			Gl.glRotated(-90,1,0,0);
 			Gl.glTranslated(0,0,30);
 			Gl.glRotated(90,1,0,0);
-			//Glu.gluCylinder(q,5,2,20,20,20);
 			Gl.glPopMatrix();
 
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);

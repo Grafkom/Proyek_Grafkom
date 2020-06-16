@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Mesa.
-	/// </summary>
-	public class Meja : Plantilla
+	public class Meja : Template
 	{
 		public Meja(Point3D center,double angle):base(center,angle){}
 
@@ -18,7 +15,6 @@ namespace TareaGL
 			Gl.glColor3d(.3,.3,.3);
 			double alto = 45;
 			Gl.glPushMatrix();
-			//Gl.glColor3d(0.4,0.4,0.4);
 			Gl.glTranslated(-40,0,-90);
 			pintaPata(alto);
 			Gl.glPopMatrix();

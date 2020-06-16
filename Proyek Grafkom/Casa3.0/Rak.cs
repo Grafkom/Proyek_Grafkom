@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Estante2Gl.
-	/// </summary>
-	public class Rak:Plantilla
+	public class Rak:Template
 	{
 		
 
@@ -20,8 +17,6 @@ namespace TareaGL
 
 		protected override void Particular()
 		{
-//			Gl.glColor4d(0,.5,.5,.4);
-//			Gl.glColor3d(0,.5,.5);
 			Gl.glColor3d(1,1,1);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("WOOD1"));
 			Gl.glPushMatrix();

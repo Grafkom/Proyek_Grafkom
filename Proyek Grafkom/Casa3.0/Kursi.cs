@@ -3,10 +3,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for SillaGl.
-	/// </summary>
-	public class Kursi : Plantilla
+	public class Kursi : Template
 	{
 		public Kursi(Point3D center,double angle):base(center,angle){}
 

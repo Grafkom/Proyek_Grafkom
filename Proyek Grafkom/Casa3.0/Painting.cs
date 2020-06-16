@@ -4,11 +4,7 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for TV.
-	/// </summary>
-    /// 
-	public class Painting : Plantilla
+	public class Painting : Template
 	{
 		public static int ctr = 0;
 

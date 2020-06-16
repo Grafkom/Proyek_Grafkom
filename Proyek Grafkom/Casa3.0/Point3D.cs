@@ -2,9 +2,7 @@ using System;
 
 namespace TareaGL
 {
-	/// <summary>
-	/// Summary description for Point3D.
-	/// </summary>
+	
 	public class Point3D 
 	{
 		protected double x;
@@ -22,7 +20,6 @@ namespace TareaGL
 		{
 		}
 		public Point3D(Point3D original):this(original.x,original.y,original.z){;}
-		//protected double norma=-1;
 		protected double norma=-1;
 		public double Norm
 		{
@@ -91,14 +88,12 @@ namespace TareaGL
 		}
 		public Point3D Rotated(double angle, Point3D axis) 
 		{
-			//			if (angle==0 || axis.Norm==0) return new Point3D(this); 
 			Point3D l = axis.Scaled(this.ScalarProduct(axis));
 			Point3D r = this-l;
 			if (r.Norm==0) return new Point3D(this); 
 			double cosBeta=Math.Cos(angle*Math.PI/180);
 			double sinBeta=Math.Sin(angle*Math.PI/180);
 			return l+r.Scaled(cosBeta)+axis.CrossProduct(r).Normalized.Scaled(r.Norm*sinBeta);
-			//return null;
 		}
 		public void Rotate(double angle, Point3D axis) 
 		{
