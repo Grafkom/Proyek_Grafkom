@@ -30,7 +30,7 @@ namespace TareaGL
 		protected void pintaEstante() 
 		{
 			Gl.glColor3d(.7,.6,0);
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("ESTANTE"));
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("RAK"));
 			Gl.glPushMatrix();
 				Gl.glTranslated(0,-33,0);
 				GlUtils.PintaOrtoedro(72/2,1,15);

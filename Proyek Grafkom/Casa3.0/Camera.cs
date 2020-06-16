@@ -55,22 +55,25 @@ namespace TareaGL
 		{
 			Translate(location-origin);
 		}
+
 		public void Strafe(Point3D direction) 
 		{
-			
 			this.Translate(StrafeDir(direction));
 		}
 		public Point3D StrafeDir(Point3D direction) 
 		{
-			Point3D Xvector = right.Normalized;
+			Point3D Xvector = right.Normalized; //mengambil unit vektor
 			Point3D Yvector = up.Normalized;
 			Point3D Zvector = this.direction.Normalized;
+
+			//scaling
 			return Xvector.Scaled(direction.X)+Yvector.Scaled(direction.Y)+Zvector.Scaled(direction.Z);
 		}
 		public void Pan(double angleY, double angleZ) 
 		{
 			Point3D upt = new Point3D(0,1,0);
 			Point3D dir=direction.Rotated(angleY,upt);
+			//rotasi
 			right=right.Rotated(angleY,upt).Normalized;
 			direction=dir.Rotated(angleZ,this.right).Normalized;
 		}

@@ -45,7 +45,7 @@ namespace TareaGL
 			Gl.glLoadIdentity();
 			camera.Look();
 			World.Render();
-			Glut.glutSwapBuffers();
+			Glut.glutSwapBuffers();// seperti double buffering
 		}
 
 		void keymove (byte b, int i, int j) 
@@ -55,7 +55,7 @@ namespace TareaGL
 			{
 				case (char)27: toggleUpdate(); break;
 				case 'g': this.ghostMode=!ghostMode;break;
-				case '+': this.StrafeSpeed*=1.5; break;
+				case '+': this.StrafeSpeed*=1.5; break;//change speed
 				case '-': this.StrafeSpeed/=1.5; break;
 				default: 
 					findTargetObject(c);
@@ -189,7 +189,7 @@ namespace TareaGL
 		
 		public DateTime CurrentTime;
 
-		protected void Update() 
+		protected void Update() //mengambil input pergerakan
 		{
 			TimeSpan elapsed = DateTime.Now.Subtract(CurrentTime);
 			CurrentTime = DateTime.Now;
@@ -222,6 +222,7 @@ namespace TareaGL
 				moveDir+=ColisionNormal;
 				ColisionNormal=World.ColisionNormal(camera.Origin,moveDir,30);
 			}
+			//tembus tembok
 			if (ColisionNormal.Norm<.5 && moveDir.Norm>1)
 				camera.Translate(moveDir);
 			WinApi.SetCursorPos(xcenter,ycenter);

@@ -31,7 +31,7 @@ namespace TareaGL
 
 			Gl.glCallList(this.idObject);
 
-			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("AZULEJO"));
+			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("TEKO"));
 			Gl.glColor3d(0.1,0.15,.1);
 
 			double d = (int)this.distance/50;

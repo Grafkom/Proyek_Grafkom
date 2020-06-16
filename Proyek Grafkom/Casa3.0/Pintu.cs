@@ -8,7 +8,7 @@ namespace TareaGL
 	
 	public class Pintu : GlObject, InteractiveObject
 	{
-		protected int idPuerta = -1;
+		protected int idPintu = -1;
 		protected static int textureIndex=-1;
 		public double Apertura = 0;
 		public bool SoloMarco=false;
@@ -37,7 +37,7 @@ namespace TareaGL
 			set 
 			{
 				rev=value;
-				Gl.glNewList(idPuerta,Gl.GL_COMPILE);
+				Gl.glNewList(idPintu,Gl.GL_COMPILE);
 				this.pintaPuerta();
 				Gl.glEndList();
 			}
@@ -46,17 +46,17 @@ namespace TareaGL
 		{
 			textureIndex=GlUtils.Texture("ROSEGOLD");
 			texturaBisagra=GlUtils.Texture("BISAGRA");
-			texturaPuerta=GlUtils.Texture("PUERTA");
+			texturaPuerta=GlUtils.Texture("DOOR");
 			texturaKnob=GlUtils.Texture("ROSEGOLD");
 			this.position=position;
 			this.angle=angle;
-			if (idPuerta==-1) 
+			if (idPintu==-1) 
 			{
-				idPuerta=Gl.glGenLists(2);
-				Gl.glNewList(idPuerta,Gl.GL_COMPILE);
+				idPintu=Gl.glGenLists(2);
+				Gl.glNewList(idPintu,Gl.GL_COMPILE);
 				this.pintaPuerta();
 				Gl.glEndList();
-				Gl.glNewList(idPuerta+1,Gl.GL_COMPILE);
+				Gl.glNewList(idPintu+1,Gl.GL_COMPILE);
 				this.pintaBisagra();
 				Gl.glEndList();
 			}
@@ -162,11 +162,11 @@ namespace TareaGL
 					Gl.glTranslated(border+.5,0,-deep/2+.5);
 				else 
 					Gl.glTranslated(border+.5,0,deep/2-.5);
-				Gl.glCallList(this.idPuerta+1);
+				Gl.glCallList(this.idPintu+1);
 				Gl.glPushMatrix();
 				Gl.glColor3d(1,1,1);
 				Gl.glRotated(reversed?-this.aperturaActual:this.aperturaActual,0,1,0);
-				Gl.glCallList(idPuerta);
+				Gl.glCallList(idPintu);
 				Gl.glPopMatrix();
 				Gl.glPopMatrix();
 			}
