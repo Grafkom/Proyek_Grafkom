@@ -8,7 +8,7 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Casa2.
 	/// </summary>
-	public class Casa2: GlObject
+	public class Museum2: GlObject
 	{
 		protected WallStrip ws;
 		Piso piso;
@@ -20,7 +20,7 @@ namespace TareaGL
 		double height=300;
 		double farDistance=1200;
 
-		public Casa2 () 
+		public Museum2 () 
 		{
 			ws = new WallStrip(0,270);
 			ws.CloseFrom(false);

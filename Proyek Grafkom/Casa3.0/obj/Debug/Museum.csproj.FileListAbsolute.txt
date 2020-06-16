@@ -1,0 +1,7 @@
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Casa.exe
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Casa.pdb
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\bin\Debug\Tao.OpenGl.dll
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Museum.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Museum.csproj.CopyComplete
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.exe
+C:\Users\Asus\Documents\GitHub\Proyek_Grafkom\Proyek Grafkom\Casa3.0\obj\Debug\Casa.pdb
