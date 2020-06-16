@@ -34,7 +34,7 @@ namespace TareaGL
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,GlUtils.Texture("rose"));    
 			Gl.glTranslated(0,alto,0);
 			Gl.glColor3d(.8,.6,.6);
-			GlUtils.PintaOrtoedro(50,alto/10,100);
+			GlUtils.GambarBangun(50,alto/10,100);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 			height = 94.5;
 			yInc = 45;

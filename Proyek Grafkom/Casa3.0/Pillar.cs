@@ -17,7 +17,7 @@ namespace TareaGL
 			Glu.gluQuadricTexture(q,Gl.GL_TRUE);
 			Gl.glColor3d(1, 1, 1);
 
-			GlUtils.PintaOrtoedro(0.7f*5,1.0f*160,0.7f*10);
+			GlUtils.GambarBangun(0.7f*5,1.0f*160,0.7f*10);
 
 			Gl.glPopMatrix();
 

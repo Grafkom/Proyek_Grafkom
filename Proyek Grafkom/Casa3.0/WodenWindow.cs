@@ -36,7 +36,7 @@ namespace TareaGL
 		protected void pintaPersiana() 
 		{
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,textureIndex);
-			GlUtils.PintaOrtoedro(45,10,2,true);
+			GlUtils.GambarBangun(45,10,2,true);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 
 		}
