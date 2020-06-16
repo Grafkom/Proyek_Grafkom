@@ -8,7 +8,9 @@ using System.Drawing.Drawing2D;
 
 namespace TareaGL
 {
-	
+	/// <summary>
+	/// Summary description for Camera.
+	/// </summary>
 	public class Camera 
 	{
 		public Point3D Origin {get {return origin;}}
@@ -31,7 +33,7 @@ namespace TareaGL
 		protected Point3D right 
 		{
 			get {return direction.CrossProduct(up).Normalized;}
-			set {up=value.CrossProduct(direction).Normalized; }
+			set {up=value.CrossProduct(direction).Normalized;}
 		}
 
 		public Camera (Point3D origin, Point3D center, Point3D up)
@@ -46,6 +48,12 @@ namespace TareaGL
 
 		}
 
+		//public Rectangle getLook()
+		//      {
+		//          return new Rectangle(origin.X,origin.Y,origin.Z,center.X,center.Y,center.Z,up.X,up.Y,up.Z);
+		//      }
+
+
 		public void Translate(Point3D direction) 
 		{
 			this.origin.Translate(direction);
@@ -56,15 +64,17 @@ namespace TareaGL
 		{
 			Translate(location-origin);
 		}
-		public void Frame(Point3D direction) 
+		public void Strafe(Point3D direction) 
 		{
-			this.Translate(FrameDir(direction));
+			//Point3D camDirection = center-origin;
+			//this.Translate(moveDir);
+			this.Translate(StrafeDir(direction));
 		}
-		public Point3D FrameDir(Point3D direction) 
+		public Point3D StrafeDir(Point3D direction) 
 		{
-			Point3D Xvector = right.Normalized;
+			Point3D Xvector = right.Normalized;//camDirection.CrossProduct(up).Normalized;
 			Point3D Yvector = up.Normalized;
-			Point3D Zvector = this.direction.Normalized;
+			Point3D Zvector = this.direction.Normalized;//camDirection.Normalized;
 			return Xvector.Scaled(direction.X)+Yvector.Scaled(direction.Y)+Zvector.Scaled(direction.Z);
 		}
 		public void Pan(double angleY, double angleZ) 

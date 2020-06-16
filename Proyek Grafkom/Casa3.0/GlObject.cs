@@ -3,12 +3,16 @@ using System.Collections;
 
 namespace TareaGL
 {
-	
+	/// <summary>
+	/// Summary description for GlObject.
+	/// </summary>
 	public abstract class GlObject
 	{
 		public GlObject()
 		{
-			
+			//
+			// TODO: Add constructor logic here
+			//
 		}
 		public virtual void Prepare(Avatar observer) {;}
 		public abstract void Render();
@@ -37,6 +41,12 @@ namespace TareaGL
 		void Act(char command);
 	}
 
+	/**
+	 * 
+	 * GlObjectList es el unico que garantiza que pintara primero
+	 * su far, y luego su near, ordenadamente.
+	 * 
+	 **/
 	public class GlObjectList : GlObject,IEnumerable 
 	{
 		protected ArrayList far = new ArrayList();
@@ -77,6 +87,11 @@ namespace TareaGL
 		
 		protected void sortList(ArrayList near,Point3D location) 
 		{
+			// Si, estoy ordenando por burbuja a proposito.
+			// En el contexto en que es llamado este metodo,
+			// 'near' casi siempre esta casi ordenado, por
+			// lo que burbuja lo ordena en O(n) en casi todos
+			// los casos, contra O(n log n) del quicksort.
 			bool cambio=true;
 			double [] distances = new double[near.Count];
 			while (cambio)

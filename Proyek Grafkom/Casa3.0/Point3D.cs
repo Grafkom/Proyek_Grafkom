@@ -18,36 +18,36 @@ namespace TareaGL
 		{
 			this.x=x; this.y=y; this.z=z;
 		}
-		public Point3D(double[] points):this(points[0],points[1],points[2])
+		public Point3D(double[] puntos):this(puntos[0],puntos[1],puntos[2])
 		{
 		}
 		public Point3D(Point3D original):this(original.x,original.y,original.z){;}
-			
-		protected double rule=-1;
+		//protected double norma=-1;
+		protected double norma=-1;
 		public double Norm
 		{
 			get 
 			{
-				if (rule==-1) 
-					rule=Math.Sqrt(x*x+y*y+z*z);
-				return rule;				
+				if (norma==-1) 
+					norma=Math.Sqrt(x*x+y*y+z*z);
+				return norma;				
 			}
 		}
 
-		protected Point3D Normalize=null;
+		protected Point3D normalized=null;
 		public Point3D Normalized 
 		{
 			get
 			{
-				if (Normalized!=null) return Normalized;
-				double rule=Norm;
-				if (rule==0) 				
+				if (normalized!=null) return normalized;
+				double norma=Norm;
+				if (norma==0) 				
 				{
-					throw new InvalidOperationException("No se puede rulelizar el vector nulo");
+					throw new InvalidOperationException("No se puede normalizar el vector nulo");
 				}
 
-				Normalize=new Point3D(X/rule,Y/rule,Z/rule); 
-				return Normalized;
+				normalized=new Point3D(X/norma,Y/norma,Z/norma); 
+				return normalized;
 			}
 		}
 
@@ -82,8 +82,8 @@ namespace TareaGL
 		}
 		protected void invalidateCaches() 
 		{
-			this.rule=-1;
-			this.Normalize=null;
+			this.norma=-1;
+			this.normalized=null;
 		}
 		public Point3D Scaled(double factor) 
 		{
@@ -135,9 +135,9 @@ namespace TareaGL
 		}
 		public double DistanceToPlane (Point3D v1, Point3D v2, Point3D v3) 
 		{
-			Point3D rulel = (v1-v3).CrossProduct(v2-v3);
+			Point3D normal = (v1-v3).CrossProduct(v2-v3);
 			double d1 = this.DistanceToPoint(v3);
-			double cosAlpha=rulel.Normalized.ScalarProduct((this-v3).Normalized);
+			double cosAlpha=normal.Normalized.ScalarProduct((this-v3).Normalized);
 			return Math.Abs(d1*cosAlpha);
 		}
 		public override bool Equals (Object o) 

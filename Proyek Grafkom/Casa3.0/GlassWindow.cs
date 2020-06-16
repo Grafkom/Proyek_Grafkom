@@ -4,6 +4,9 @@ using System.Collections;
 
 namespace TareaGL
 {
+	/// <summary>
+	/// Summary description for GlassWindow.
+	/// </summary>
 	public class GlassWindow:Window,MetricObject
 	{
 		protected static int id = -1;
@@ -19,6 +22,16 @@ namespace TareaGL
 		double xscale=.8;
 		double yscale=.8;
 
+		#region Width and Height
+		public override double Width 
+		{
+			get { return 50*xscale; }
+		}
+		public override double Height 
+		{
+			get { return 75*2*yscale; }
+		}
+		#endregion
 		protected void renderWindow() 
 		{
 			id = Gl.glGenLists(1);

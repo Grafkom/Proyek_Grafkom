@@ -3,7 +3,10 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
-	public class TV : Template
+	/// <summary>
+	/// Summary description for TV.
+	/// </summary>
+	public class TV : Plantilla 
 	{
 		public TV(Point3D center,double angle):base(center,angle)
 		{
@@ -15,20 +18,20 @@ namespace TareaGL
 		protected override void Particular(){
 			//Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("frame2"));
 			Gl.glColor3d(0.421875,0.421875,0.421875);
-			GlUtils.GambarBangunUnstretched(150,95,5);
+			GlUtils.PintaOrtoedroUnstretched(150,95,5);
 			Gl.glPushMatrix();
 			Gl.glTranslated(0,-2,-30);
 			Gl.glTranslated(0,2,40);
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("paint"));			
 			Gl.glColor3d(0,0,0);
-			GlUtils.GambarBangunUnstretched(145,90,0.5);
+			GlUtils.PintaOrtoedroUnstretched(145,90,0.5);
 			Gl.glPopMatrix();
 			Gl.glPushMatrix();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, 0);
 
 			//antena
 			Gl.glColor3d(0,0,0);
-			GlUtils.GambarBangun(3,2,1);
+			GlUtils.PintaOrtoedro(3,2,1);
 			Gl.glTranslated(0,2,0);
 			Gl.glTranslated(0,-2,0);
 			Gl.glPushMatrix();

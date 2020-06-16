@@ -3,18 +3,21 @@ using System.Collections;
 
 namespace TareaGL
 {
-	
+	/// <summary>
+	/// Summary description for WindowArray.
+	/// </summary>
 	public class WindowArray : Window
 	{
-		//protected Window[] windows;
-		protected GlObjectList windows=new GlObjectList();
+		//protected Window[] ventanas;
+		protected GlObjectList ventanas=new GlObjectList();
 		protected double width=0;
 		protected double height=0;
-		public WindowArray(params Window[] windows)
+		public WindowArray(params Window[] ventanas)
 		{
-			foreach (Window w in windows)
+			//this.ventanas=ventanas;
+			foreach (Window w in ventanas)
 			{
-				this.windows.Add(w);
+				this.ventanas.Add(w);
 				width+=w.Width;
 				height = Math.Max(height,w.Height);
 			}
@@ -22,15 +25,15 @@ namespace TareaGL
 
 		public override void Split(ArrayList far, ArrayList near) 
 		{
-			windows.Split(far,near);
+			ventanas.Split(far,near);
 		}
 		public override void Prepare (Avatar observer) 
 		{
-			windows.Prepare(observer);
+			ventanas.Prepare(observer);
 		}
 		public override void Render () 
 		{
-			windows.Render();
+			ventanas.Render();
 		}
 		public override double Width { get { return width; } }
 		public override double Height { get { return height; } }
@@ -40,7 +43,7 @@ namespace TareaGL
 			set 
 			{ 
 				angle=value; 
-				foreach (Window w in windows)
+				foreach (Window w in ventanas)
 					w.Angle=value;
 				Location = this.start;
 			}
@@ -53,7 +56,7 @@ namespace TareaGL
 				start=value; 
 				double length=0;
 				Point3D dir = new Point3D(Math.Cos(angle*Math.PI/180),0,Math.Sin(angle*Math.PI/180));
-				foreach (Window w in windows)
+				foreach (Window w in ventanas)
 				{
 					w.Location=value+dir.Scaled(length);
 					length+=w.Width;
@@ -62,7 +65,7 @@ namespace TareaGL
 		}
 		public override void FindTargetsFor(char c, ArrayList result) 
 		{
-			this.windows.FindTargetsFor(c,result);
+			this.ventanas.FindTargetsFor(c,result);
 		}
 	}
 }

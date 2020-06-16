@@ -6,7 +6,7 @@ namespace TareaGL
 	/// <summary>
 	/// Summary description for Mesita.
 	/// </summary>
-	public class Mesita:Template
+	public class Mesita:Plantilla
 	{
 		public Mesita(Point3D center,double angle):base(center,angle){
 			this.height=58;

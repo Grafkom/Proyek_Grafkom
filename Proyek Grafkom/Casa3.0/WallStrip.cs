@@ -4,6 +4,9 @@ using Tao.OpenGl;
 
 namespace TareaGL
 {
+	/// <summary>
+	/// Summary description for WallStrip.
+	/// </summary>
 	public class WallStrip : GlObject
 	{
 		protected GlObjectList walls = new GlObjectList(); 
@@ -18,7 +21,7 @@ namespace TareaGL
 		{
 			if (!stripping) throw new InvalidOperationException("Can't add wall: strip not started.");
 			if (!this.stripStarted) throw new InvalidOperationException("Can't add wall: need the first wall of the strip");
-			Wall last = this.last;
+			Wall last = this.last;//(Wall)walls[walls.Count-1];
 			Wall next;
 			if (! invert )
 				next = WallBuilder.BuildWall(last.To,new Point3D(x,0,z),bottom,height,type);
@@ -51,6 +54,8 @@ namespace TareaGL
 		}
 		protected void closewall() 
 		{
+			//((Wall)walls[walls.Count-1]).CloseFrom(this.closeFrom);
+			//((Wall)walls[walls.Count-1]).CloseTo(this.closeTo);
 			last.CloseFrom(this.closeFrom);
 			last.CloseTo(this.closeTo);
 		}
@@ -69,6 +74,8 @@ namespace TareaGL
 
 		public override void Split(ArrayList far, ArrayList near) 
 		{
+//			foreach (GlObject obj in this.walls)
+//				obj.Split(far,near);
 			this.walls.Split(far,near);
 		}		
 		public override void Prepare (Avatar observer) 
@@ -102,11 +109,15 @@ namespace TareaGL
 			last.CloseTo(this.stripCloseEnd);
 			this.stripping=false;
 		}
+
+		/* Modifica el closeTo y closeFrom de la ultima
+		 * pared annadida
+		 */
 		protected bool closeTo = true;
 		protected bool closeFrom = true;
 		public void CloseFrom(bool close) 
 		{
-			
+			//((Wall)walls[lastSection]).CloseFrom(close);
 			this.closeFrom=close;
 		}
 		public void CloseTo ( bool close) 
@@ -118,9 +129,9 @@ namespace TareaGL
 		{
 			this.walls.FindTargetsFor(c,result);
 		}	
-		public override Point3D Colisionrulel(Point3D point, Point3D direction, double radius) 
+		public override Point3D ColisionNormal(Point3D punto, Point3D direction, double radius) 
 		{
-			return this.walls.Colisionrulel(point,direction,radius);
+			return this.walls.ColisionNormal(punto,direction,radius);
 		}
 	}
 }

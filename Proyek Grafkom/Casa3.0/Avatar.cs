@@ -5,10 +5,13 @@ using System.Collections;
 
 namespace TareaGL
 {
+	/// <summary>
+	/// Summary description for Avatar.
+	/// </summary>
 	public class Avatar
 	{
 		protected bool ghostMode=false;
-		public double FrameSpeed=300;
+		public double StrafeSpeed=300; /* Velocidad en unidades por segundo */
         protected GlControl ViewPort;
 		protected Point3D origin = new Point3D(103,100,700);
 		protected Point3D center = new Point3D(179,100,318);
@@ -55,8 +58,8 @@ namespace TareaGL
 			{
 				case (char)27: toggleUpdate(); break;
 				case 'g': this.ghostMode=!ghostMode;break;
-				case '+': this.FrameSpeed*=1.5; break;
-				case '-': this.FrameSpeed/=1.5; break;
+				case '+': this.StrafeSpeed*=1.5; break;
+				case '-': this.StrafeSpeed/=1.5; break;
 				default: 
 					findTargetObject(c);
 					break;
@@ -154,7 +157,7 @@ namespace TareaGL
 
 		protected bool lButtonDown=false;
 		protected bool rButtonDown=false;
-		protected Point3D FrameDir = new Point3D(0,0,0);
+		protected Point3D strafeDir = new Point3D(0,0,0);
 		protected void MouseFunc(int button, int state, int x, int y) 
 		{
 
@@ -203,7 +206,7 @@ namespace TareaGL
 			sz+=PressedKeyBackward?1:0;
 			sz+=PressedKeyForward?-1:0;
 
-			this.FrameDir=new Point3D(sx,sy,sz);
+			this.strafeDir=new Point3D(sx,sy,sz);
 			int xcenter = this.ViewPort.Width>>1;
 			int ycenter = this.ViewPort.Height>>1;
 			if (started) 
@@ -212,14 +215,14 @@ namespace TareaGL
 				camera.Pan((-p.x+xcenter)/10f,(-p.y+ycenter)/10f);
 			} 
 			else started=true;
-			Point3D moveDir = camera.FrameDir(this.FrameDir.Scaled(elapsed.TotalSeconds*this.FrameSpeed));
-			Point3D Colisionrulel=(ghostMode)?new Point3D(0,0,0):World.Colisionrulel(camera.Origin,moveDir,30);
-			if (Colisionrulel.Norm>0) 
+			Point3D moveDir = camera.StrafeDir(this.strafeDir.Scaled(elapsed.TotalSeconds*this.StrafeSpeed));
+			Point3D ColisionNormal=(ghostMode)?new Point3D(0,0,0):World.ColisionNormal(camera.Origin,moveDir,30);
+			if (ColisionNormal.Norm>0) 
 			{
-				moveDir+=Colisionrulel;
-				Colisionrulel=World.Colisionrulel(camera.Origin,moveDir,30);
+				moveDir+=ColisionNormal;
+				ColisionNormal=World.ColisionNormal(camera.Origin,moveDir,30);
 			}
-			if (Colisionrulel.Norm<.5 && moveDir.Norm>1)
+			if (ColisionNormal.Norm<.5 && moveDir.Norm>1) //No me movere si la distancia a moverme es muy pequenna
 				camera.Translate(moveDir);
 			WinApi.SetCursorPos(xcenter,ycenter);
 		}
