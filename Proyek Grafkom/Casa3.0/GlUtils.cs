@@ -153,7 +153,7 @@ namespace TareaGL
 		}
 		#endregion
 
-		public static void PintaOrtoedro(double x, double y, double z) 
+		public static void GambarBangun(double x, double y, double z) 
 		{
 			Gl.glBegin(Gl.GL_QUADS);
 			Gl.glNormal3d(0,0,1);
@@ -218,7 +218,7 @@ namespace TareaGL
 			Gl.glEnd();
 		}
 
-		public static void PintaOrtoedroUnstretched(double x, double y, double z) 
+		public static void GambarBangunUnstretched(double x, double y, double z) 
 		{
 			Gl.glBegin(Gl.GL_QUADS);
 			Gl.glNormal3d(0,0,1);
@@ -285,8 +285,8 @@ namespace TareaGL
 
 
 
-		public static void PintaOrtoedroFlat(double x, double y, double z){ PintaOrtoedro(x,y,z);}
-		public static void PintaOrtoedroSmooth(double x, double y, double z) 
+		public static void GambarBangunFlat(double x, double y, double z){ GambarBangun(x,y,z);}
+		public static void GambarBangunSmooth(double x, double y, double z) 
 		{
 			Gl.glBegin(Gl.GL_QUADS);
 			Gl.glNormal3d(-1,1,1);
@@ -369,10 +369,10 @@ namespace TareaGL
 			Gl.glEnd();
 		}
 
-		public static void PintaOrtoedro(double x, double y, double z,bool smooth) 
+		public static void GambarBangun(double x, double y, double z,bool smooth) 
 		{
-			if (smooth) PintaOrtoedroSmooth(x,y,z);
-			else PintaOrtoedroFlat(x,y,z);
+			if (smooth) GambarBangunSmooth(x,y,z);
+			else GambarBangunFlat(x,y,z);
 		}
 
 		public static int CreateTexture(string filename) 

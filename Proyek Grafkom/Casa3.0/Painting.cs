@@ -20,9 +20,9 @@ namespace TareaGL
 		protected override void Particular(){
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("frame2"));
 			if(ctr<4){
-				GlUtils.PintaOrtoedroUnstretched(40,35,1);
+				GlUtils.GambarBangunUnstretched(40,35,1);
 			}else{
-				GlUtils.PintaOrtoedroUnstretched(35,50,1);
+				GlUtils.GambarBangunUnstretched(35,50,1);
 			}
 			Gl.glPushMatrix();
 			Gl.glTranslated(0,-2,-30);
@@ -30,9 +30,9 @@ namespace TareaGL
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D, GlUtils.Texture("paint"+ctr));			
 		
 			if(ctr<4){
-				GlUtils.PintaOrtoedroUnstretched(30,25,0.01);
+				GlUtils.GambarBangunUnstretched(30,25,0.01);
 			}else{
-				GlUtils.PintaOrtoedroUnstretched(25,45,0.01);
+				GlUtils.GambarBangunUnstretched(25,45,0.01);
 			}
 			Gl.glPopMatrix();
 		}

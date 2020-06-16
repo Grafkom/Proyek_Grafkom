@@ -19,9 +19,9 @@ namespace TareaGL
 			Gl.glColor3d(0.5,0.25,0);
 			Gl.glPushMatrix();
 			Gl.glTranslated(0.8f*20,0,0);
-			GlUtils.PintaOrtoedro(0.8f*20,1f*40,0.4f*50);
+			GlUtils.GambarBangun(0.8f*20,1f*40,0.4f*50);
 			Gl.glTranslated(0,0,0.45f*50);
-			GlUtils.PintaOrtoedro(0.8f*20,1f*40,0.05f*50);
+			GlUtils.GambarBangun(0.8f*20,1f*40,0.05f*50);
 			Gl.glTranslated(-0.7f*20,4,0.06f*50);
 			
 			Gl.glColor3d(0.25,0.25/2,0);
@@ -29,9 +29,9 @@ namespace TareaGL
 			Gl.glPushMatrix();
 			Gl.glColor3d(0.5,0.25,0);
 			Gl.glTranslated(-0.8f*20,0,0);
-			GlUtils.PintaOrtoedro(0.8f*20,1f*40,0.4f*50);
+			GlUtils.GambarBangun(0.8f*20,1f*40,0.4f*50);
 			Gl.glTranslated(0,0,0.45f*50);
-			GlUtils.PintaOrtoedro(0.8f*20,1f*40,0.05f*50);
+			GlUtils.GambarBangun(0.8f*20,1f*40,0.05f*50);
 			Gl.glTranslated(0.7f*20,4,0.06f*50);
 			Gl.glColor3d(0.25,0.25/2,0);
 			Gl.glPopMatrix();
