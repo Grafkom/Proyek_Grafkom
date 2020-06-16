@@ -66,6 +66,8 @@ namespace TareaGL
 			foreach (GlObject obj in near)
 				obj.Render();
 		}
+
+		//cek nabrak tembok
 		public override Point3D ColisionNormal(Point3D origin, Point3D direction, double radius) 
 		{
 			Point3D result = new Point3D(0,0,0);
@@ -76,11 +78,11 @@ namespace TareaGL
 		
 		protected void sortList(ArrayList near,Point3D location) 
 		{
-			bool cambio=true;
+			bool change=true;
 			double [] distances = new double[near.Count];
-			while (cambio)
+			while (change)
 			{
-				cambio=false;
+				change=false;
 				for (int i =0; i<near.Count-1;i++)
 				{
 					double d1 = 0;
@@ -109,7 +111,7 @@ namespace TareaGL
 						double t = distances[i];
 						distances[i]=distances[i+1];
 						distances[i+1]=t;
-						cambio=true;
+						change=true;
 					}
 				}
 			}

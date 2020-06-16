@@ -12,7 +12,7 @@ namespace TareaGL
 		{
 			yInc = 35;
 			ctr++;
-			Console.WriteLine("ctr:"+ctr);
+			//Console.WriteLine("ctr:"+ctr);
 		}
 
 		public Painting(Point3D center):this(center,0){}

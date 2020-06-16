@@ -15,7 +15,7 @@ namespace TareaGL
 		double x2=-344;
 		double z1=603;
 		double z2=-670;
-		double height=300;
+		double tinggi=300;
 		double farDistance=1200;
 
 		public Museum2 () 
@@ -24,9 +24,8 @@ namespace TareaGL
 			ws.CloseFrom(false);
 			ws.CloseTo(false);
 			Lantai = new Lantai(x1,z1,x2,z2,10);
-			Atap = new Atap(x1,z1,x2,z2,20,height-10-20);
-			#region BalconRecibidor
-			//Pared exterior de la sala
+			Atap = new Atap(x1,z1,x2,z2,20,tinggi-10-20);
+			#region Balkon
 			//1
 			ws.BeginStrip(false,true);
 			ws.Add(491.5,-10,491.5,523,"glass");
@@ -37,43 +36,28 @@ namespace TareaGL
 			ws.AddTo(184,318);
 			ws.EndStrip();
 			#endregion
-			#region salaCocina - division entre la sala y la cocina
+
+			#region ruangLukisan
 			ws.BeginStrip(false,false);
 			ws.Add(178,416,103,416,"reversed door");
-			//ws.Add(108,416,33,416,"reversed door");
 			ws.AddTo(0,416);
 			ws.AddTo(-103,318);
 			ws.AddTo(-103,37);
 			ws.AddTo(-103,-37,"passage");
 			ws.EndStrip();
-
-//			ws.BeginStrip(false,true);
-//			ws.Add(-103,-37,-103,37,"passage");
-//			ws.AddTo(-103,318);
-//			ws.AddTo(0,416);
-//			ws.AddTo(103,416);
-//			ws.AddTo(178,416,"door");
-//			ws.EndStrip();
 			#endregion
-			#region outterShell			
-			//9
+
+			#region luar			
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-37,-103,-288);
-			//ws.AddTo(-103,-362,"door");
 			ws.EndStrip();
 
-			//8 kamar depan
 			ws.BeginStrip(false,false);
 			ws.Add(-103,-125,-314,-125);
-			//ws.AddTo(-314,162,"woden woden",true);
 			ws.AddTo(-230,162);
 			ws.AddTo(-103,162);
 			ws.EndStrip();
 
-			//7
-			//ws.BeginStrip(false,true);
-			//ws.Add(-185,-125,-185,-220);
-			//ws.EndStrip();
 			
 			//6 kamar tengah
 			ws.BeginStrip(false,true);
@@ -84,17 +68,12 @@ namespace TareaGL
 			//5
 			ws.BeginStrip(false,false);
 			ws.Add(-314,-215,-314,-480,"glass woden");
-			//ws.AddTo(-103,-480);
-			//ws.AddTo(-103,-362);
 			ws.EndStrip();
 			
 			//4
 			ws.BeginStrip(false,true);
 			ws.Add(-314,-480,-314,-640);
-			//ws.AddTo(10,-640);
-			//ws.AddTo(10,-420);
-			//ws.AddTo(126,-420);
-			ws.AddTo(126,-640); // Idealmente, esta seria otro tipo de pared, "walk in closet" o algo asi.
+			ws.AddTo(126,-640); 
 			ws.EndStrip();
 			
 			//3 ruang tunggu
@@ -107,7 +86,6 @@ namespace TareaGL
 			ws.Add(88,-325,88,-230,"door");
 			ws.EndStrip();
 			ws.BeginStrip(false,false);
-			//ws.Add(88,-325,86,-420,"passage");
 			ws.EndStrip();
 
 			//2
@@ -131,11 +109,11 @@ namespace TareaGL
 			Atap.Split(far,near);
 #endif
 		}
-		public override void Prepare (Avatar observer) 
+		public override void Prepare (Avatar posisiCamera) 
 		{
-			Lantai.Prepare(observer);
-			ws.Prepare(observer);
-			Atap.Prepare(observer);
+			Lantai.Prepare(posisiCamera);
+			ws.Prepare(posisiCamera);
+			Atap.Prepare(posisiCamera);
 		}
 		public override void Render() 
 		{
@@ -147,14 +125,14 @@ namespace TareaGL
 		{
 			ws.FindTargetsFor(c,result);
 		}
-		public override Point3D ColisionNormal(Point3D punto, Point3D direction, double radius) 
+		public override Point3D ColisionNormal(Point3D point, Point3D direction, double radius) 
 		{
-			Point3D p2 = punto+direction;
+			Point3D p2 = point+direction;
 			if (p2.Norm>this.farDistance)
 				return p2.Normalized.Scaled(-p2.Norm+farDistance);
 			if (p2.X<x2-radius || p2.X > x1+radius || p2.Z<z2-radius || p2.Z>z1+radius ||
-				p2.Y>height+radius) return new Point3D(0,0,0);
-			return this.ws.ColisionNormal(punto,direction,radius)+this.Atap.ColisionNormal(punto,direction,radius);
+				p2.Y>tinggi+radius) return new Point3D(0,0,0);
+			return this.ws.ColisionNormal(point,direction,radius)+this.Atap.ColisionNormal(point,direction,radius);
 		}
 	}
 
@@ -164,67 +142,67 @@ namespace TareaGL
 		double z1; 
 		double x2; 
 		double z2;
-		double height;
+		double tinggi;
 		int textura;
-		public Lantai(double x1, double z1, double x2, double z2, double height) 
+		public Lantai(double x1, double z1, double x2, double z2, double tinggi) 
 		{
 			this.x1=Math.Min(x1,x2);
 			this.x2=Math.Max(x1,x2);
 			this.z1=Math.Min(z1,z2);
 			this.z2=Math.Max(z1,z2);
-			this.height=height;
-			textura = GlUtils.Texture("Lantai");
+			this.tinggi=tinggi;
+			textura = GlUtils.Texture("FLOOR");
 		}
 		
-		Point3D camara;
-		public override void Prepare (Avatar observer)
+		Point3D camera;
+		public override void Prepare (Avatar posisiCamera)
 		{
-			this.camara=observer.Origin;
+			this.camera=posisiCamera.Origin;
 		}
 		public override void Render ()
 		{
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,textura);
 			Gl.glBegin(Gl.GL_QUADS);
 			Gl.glTexCoord2d((z2-z1)/100,0);
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z2))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z2);
 			Gl.glTexCoord2d((z2-z1)/100,(x2-x1)/100);
-			Gl.glNormal3dv((camara-(new Point3D(x2,0,z2))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x2,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z2);
 			Gl.glTexCoord2d(0,(x2-x1)/100);
-			Gl.glNormal3dv((camara-(new Point3D(x2,0,z1))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x2,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z1);
 			Gl.glTexCoord2d(0,0);
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z1);
 			Gl.glEnd();
 			Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 
 			Gl.glBegin(Gl.GL_QUAD_STRIP);
 			Gl.glColor3d(.5,.5,.5);
-			Gl.glNormal3dv((camara-(new Point3D(x1,-height,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,-height,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x1,-tinggi,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,-tinggi,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z1);
 
-			Gl.glNormal3dv((camara-(new Point3D(x2,-height,z1))).Normalized.Coords);
-			Gl.glVertex3d(x2,-height,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x2,0,z1))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x2,-tinggi,z1))).Normalized.Coords);
+			Gl.glVertex3d(x2,-tinggi,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x2,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z1);
 
-			Gl.glNormal3dv((camara-(new Point3D(x2,-height,z2))).Normalized.Coords);
-			Gl.glVertex3d(x2,-height,z2);
-			Gl.glNormal3dv((camara-(new Point3D(x2,0,z2))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x2,-tinggi,z2))).Normalized.Coords);
+			Gl.glVertex3d(x2,-tinggi,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x2,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x2,0,z2);
 
-			Gl.glNormal3dv((camara-(new Point3D(x1,-height,z2))).Normalized.Coords);
-			Gl.glVertex3d(x1,-height,z2);
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z2))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x1,-tinggi,z2))).Normalized.Coords);
+			Gl.glVertex3d(x1,-tinggi,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z2))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z2);
 
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,-height,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,0,z1))).Normalized.Coords);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,-tinggi,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,0,z1))).Normalized.Coords);
 			Gl.glVertex3d(x1,0,z1);
 
 			Gl.glEnd();
@@ -239,84 +217,82 @@ namespace TareaGL
 		double z1; 
 		double x2; 
 		double z2;
-		double height;
+		double tinggi;
 		int texturaIn;
 		int texturaOut;
-		double bottom;
-		public Atap(double x1, double z1, double x2, double z2, double height,double bottom) 
+		double bawah;
+		public Atap(double x1, double z1, double x2, double z2, double tinggi,double bawah) 
 		{
 			this.x1=Math.Min(x1,x2);
 			this.x2=Math.Max(x1,x2);
 			this.z1=Math.Min(z1,z2);
 			this.z2=Math.Max(z1,z2);
-			this.height=height;
-			this.bottom=bottom;
-			texturaIn = GlUtils.Texture("AtapIN");
-			texturaOut = GlUtils.Texture("AtapOUT");
+			this.tinggi=tinggi;
+			this.bawah=bawah;
+			texturaIn = GlUtils.Texture("ROOFIN");
+			texturaOut = GlUtils.Texture("ROOFOUT");
 		}
 		
-		Point3D camara;
+		Point3D camera;
 		bool pintaArriba=true;
 		bool pintaAbajo=true;
-		public override void Prepare (Avatar observer)
+		public override void Prepare (Avatar posisiCamera)
 		{
-			this.camara=observer.Origin;
-			pintaAbajo = camara.Y<bottom+height/2;
-			pintaArriba = camara.Y>bottom+height/2;
+			this.camera=posisiCamera.Origin;
+			pintaAbajo = camera.Y<bawah+tinggi/2;
+			pintaArriba = camera.Y>bawah+tinggi/2;
 		}
 		public override void Render ()
 		{
 			if (pintaAbajo) 
 			{
+
 			#region Atapabajo
 				Gl.glBindTexture(Gl.GL_TEXTURE_2D,texturaIn);
 				Gl.glBegin(Gl.GL_QUADS);
 				Gl.glTexCoord2d(0,0);
-				Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z1))).Normalized.Coords);
-				Gl.glVertex3d(x1,bottom,z1);
+				Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z1))).Normalized.Coords);
+				Gl.glVertex3d(x1,bawah,z1);
 				Gl.glTexCoord2d(0,(x2-x1)/100);
-				Gl.glNormal3dv((camara-(new Point3D(x2,bottom,z1))).Normalized.Coords);
-				Gl.glVertex3d(x2,bottom,z1);		
+				Gl.glNormal3dv((camera-(new Point3D(x2,bawah,z1))).Normalized.Coords);
+				Gl.glVertex3d(x2,bawah,z1);		
 				Gl.glTexCoord2d((z2-z1)/100,(x2-x1)/100);
-				Gl.glNormal3dv((camara-(new Point3D(x2,bottom,z2))).Normalized.Coords);
-				Gl.glVertex3d(x2,bottom,z2);			
+				Gl.glNormal3dv((camera-(new Point3D(x2,bawah,z2))).Normalized.Coords);
+				Gl.glVertex3d(x2,bawah,z2);			
 				Gl.glTexCoord2d((z2-z1)/100,0);
-				Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z2))).Normalized.Coords);
-				Gl.glVertex3d(x1,bottom,z2);			
+				Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z2))).Normalized.Coords);
+				Gl.glVertex3d(x1,bawah,z2);			
 				Gl.glEnd();
 				Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 			#endregion
 			}
+
 			#region Ataplados
 			Gl.glBegin(Gl.GL_QUAD_STRIP);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom+height,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom+height,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah+tinggi,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah+tinggi,z1);
 
-			//Gl.glNormal3d(1,0,-1);
-			Gl.glNormal3dv((camara-(new Point3D(x2,bottom,z1))).Normalized.Coords);
-			Gl.glVertex3d(x2,bottom,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x2,bottom+height,z1))).Normalized.Coords);
-			Gl.glVertex3d(x2,bottom+height,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x2,bawah,z1))).Normalized.Coords);
+			Gl.glVertex3d(x2,bawah,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x2,bawah+tinggi,z1))).Normalized.Coords);
+			Gl.glVertex3d(x2,bawah+tinggi,z1);
 
-			//Gl.glNormal3d(1,0,1);
-			Gl.glNormal3dv((camara-(new Point3D(x2,bottom,z2))).Normalized.Coords);
-			Gl.glVertex3d(x2,bottom,z2);
-			Gl.glNormal3dv((camara-(new Point3D(x2,bottom+height,z2))).Normalized.Coords);
-			Gl.glVertex3d(x2,bottom+height,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x2,bawah,z2))).Normalized.Coords);
+			Gl.glVertex3d(x2,bawah,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x2,bawah+tinggi,z2))).Normalized.Coords);
+			Gl.glVertex3d(x2,bawah+tinggi,z2);
 
-			//Gl.glNormal3d(-1,0,1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z2))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom,z2);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom+height,z2))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom+height,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z2))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah,z2);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah+tinggi,z2))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah+tinggi,z2);
 
-			//Gl.glNormal3d(-1,0,-1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom,z1);
-			Gl.glNormal3dv((camara-(new Point3D(x1,bottom,z1))).Normalized.Coords);
-			Gl.glVertex3d(x1,bottom+height,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah,z1);
+			Gl.glNormal3dv((camera-(new Point3D(x1,bawah,z1))).Normalized.Coords);
+			Gl.glVertex3d(x1,bawah+tinggi,z1);
 
 			Gl.glEnd();
 			#endregion
@@ -326,33 +302,33 @@ namespace TareaGL
 				Gl.glBindTexture(Gl.GL_TEXTURE_2D,texturaOut);
 				Gl.glBegin(Gl.GL_QUADS);
 				Gl.glTexCoord2d((z2-z1)/100,0);
-				Gl.glNormal3dv((camara-(new Point3D(x1,bottom+height,z2))).Normalized.Coords);
-				Gl.glVertex3d(x1,bottom+height,z2);
+				Gl.glNormal3dv((camera-(new Point3D(x1,bawah+tinggi,z2))).Normalized.Coords);
+				Gl.glVertex3d(x1,bawah+tinggi,z2);
 				Gl.glTexCoord2d((z2-z1)/100,(x2-x1)/100);
-				Gl.glNormal3dv((camara-(new Point3D(x2,bottom+height,z2))).Normalized.Coords);
-				Gl.glVertex3d(x2,bottom+height,z2);
+				Gl.glNormal3dv((camera-(new Point3D(x2,bawah+tinggi,z2))).Normalized.Coords);
+				Gl.glVertex3d(x2,bawah+tinggi,z2);
 				Gl.glTexCoord2d(0,(x2-x1)/100);
-				Gl.glNormal3dv((camara-(new Point3D(x2,bottom+height,z1))).Normalized.Coords);
-				Gl.glVertex3d(x2,bottom+height,z1);
+				Gl.glNormal3dv((camera-(new Point3D(x2,bawah+tinggi,z1))).Normalized.Coords);
+				Gl.glVertex3d(x2,bawah+tinggi,z1);
 				Gl.glTexCoord2d(0,0);
-				Gl.glNormal3dv((camara-(new Point3D(x1,bottom+height,z1))).Normalized.Coords);
-				Gl.glVertex3d(x1,bottom+height,z1);
+				Gl.glNormal3dv((camera-(new Point3D(x1,bawah+tinggi,z1))).Normalized.Coords);
+				Gl.glVertex3d(x1,bawah+tinggi,z1);
 				Gl.glEnd();
 				Gl.glBindTexture(Gl.GL_TEXTURE_2D,0);
 			#endregion
 			}
 		}
-		public override Point3D ColisionNormal(Point3D punto, Point3D direccion, double radio) 
+		public override Point3D ColisionNormal(Point3D point, Point3D arah, double radius) 
 		{
-			Point3D destino=punto+direccion;
-			if (destino.X<x1-radio || destino.X>x2+radio) return new Point3D(0,0,0);
-			if (destino.Z<z1-radio || destino.Z>z2+radio) return new Point3D(0,0,0);
-			if ((destino.Y<this.bottom-radio && punto.Y<this.bottom-radio) || 
-				(destino.Y>this.bottom+radio && punto.Y>this.bottom+radio)) return new Point3D(0,0,0);
-			if (direccion.Y>0 && punto.Y<bottom)
-				return new Point3D(0,-destino.Y+bottom-radio,0);
-			if (direccion.Y<0 && punto.Y>bottom) 
-				return new Point3D(0,bottom+radio-destino.Y,0);
+			Point3D pos=point+arah;
+			if (pos.X<x1-radius || pos.X>x2+radius) return new Point3D(0,0,0);
+			if (pos.Z<z1-radius || pos.Z>z2+radius) return new Point3D(0,0,0);
+			if ((pos.Y<this.bawah-radius && point.Y<this.bawah-radius) || 
+				(pos.Y>this.bawah+radius && point.Y>this.bawah+radius)) return new Point3D(0,0,0);
+			if (arah.Y>0 && point.Y<bawah)
+				return new Point3D(0,-pos.Y+bawah-radius,0);
+			if (arah.Y<0 && point.Y>bawah) 
+				return new Point3D(0,bawah+radius-pos.Y,0);
 			return new Point3D(0,0,0);
 		}
 	}

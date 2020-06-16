@@ -160,14 +160,17 @@ namespace TareaGL
 
 			switch (button) 
 			{
+				//maju
 				case Glut.GLUT_LEFT_BUTTON: 
 					lButtonDown=state==Glut.GLUT_DOWN;
 					this. PressedKeyBackward=state==Glut.GLUT_DOWN;
 					break;
+				//mundur
 				case Glut.GLUT_RIGHT_BUTTON: 
 					rButtonDown=state==Glut.GLUT_DOWN;
 					this.PressedKeyForward=state==Glut.GLUT_DOWN;
 					break;
+				//freeze
 				case Glut.GLUT_MIDDLE_BUTTON: 
 					if (state==Glut.GLUT_DOWN) toggleUpdate();
 					break;
