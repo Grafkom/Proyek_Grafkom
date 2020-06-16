@@ -29,11 +29,11 @@ namespace TareaGL
 		#if !testingObjects
 			world.Add(new TranslatedObject(new Point3D(0,-10,0),new SkyBox()));
 			GlObjectList casa = new GlObjectList();
-			casa.Add(new Casa2());
+			casa.Add(new Museum2());
 
 			casa.Add(new RakPajangan(new Point3D(210, 0, -318), 0));
 			casa.Add(new RakPajangan(new Point3D(210, RakPajangan.Height + .3, -318), 0));
-			casa.Add(new TV(new Point3D(315, 125, -33), 180));
+			casa.Add(new TV(new Point3D(310, 135, -33), 180));
 
 			casa.Add(new Lamp(new Point3D(60,270,190),70));
             casa.Add(new Lamp(new Point3D(300,270,350),70));
@@ -68,11 +68,11 @@ namespace TareaGL
 			//casa.Add(new teko7(new Point3D(-75, 24, -638), 180));
 			//casa.Add(new teko1(new Point3D(-75, -18, -638), 180));
 
-			//casa.Add(new RakPajangan(new Point3D(-225, 0, -635), 180));
-			//casa.Add(new RakPajangan(new Point3D(-225, RakPajangan.Height, -635), 0));
-			//casa.Add(new teko(new Point3D(-195, 4, -638), 180));
-			//casa.Add(new teko4(new Point3D(-155, 24, -638), 180));
-			//casa.Add(new teko2(new Point3D(-155, -18, -638), 180));
+			casa.Add(new RakPajangan(new Point3D(-235, 0, -635), 180));
+			casa.Add(new RakPajangan(new Point3D(-235, RakPajangan.Height, -635), 0));
+			casa.Add(new teko(new Point3D(-205, 4, -638), 180));
+			casa.Add(new teko4(new Point3D(-165, 24, -638), 180));
+			casa.Add(new teko2(new Point3D(-165, -18, -638), 180));
 
 			casa.Add(new Pillar(new Point3D(-180,70,-620),180));
 			casa.Add(new Pillar(new Point3D(-170,60,-610),180));
@@ -144,7 +144,7 @@ namespace TareaGL
 			casa.Add(new Painting(new Point3D(60,100,-590),0));
 			casa.Add(new Painting(new Point3D(-90,40,-530),0));
 			casa.Add(new Painting(new Point3D(210,40,-530),0));
-
+			casa.Add(new Painting(new Point3D(-300, 100, -500), 90));
 
 
 			casa.Add(new Clock(new Point3D(160,200,0),0));

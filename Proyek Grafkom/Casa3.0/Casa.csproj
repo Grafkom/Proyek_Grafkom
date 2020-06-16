@@ -113,7 +113,7 @@
     <Compile Include="Camera.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Casa2.cs">
+    <Compile Include="Museum2.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Chain.cs">
@@ -254,6 +254,9 @@
     <Compile Include="WodenWindow.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Casa.suo" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
