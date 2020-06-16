@@ -14,10 +14,12 @@ namespace TareaGL
 			this.bottom=bottom;
 			this.height=height;
 		}
+
+
 		public void AddTo (double x, double z, string type,bool invert) 
 		{
-			if (!stripping) throw new InvalidOperationException("Can't add wall: strip not started.");
-			if (!this.stripStarted) throw new InvalidOperationException("Can't add wall: need the first wall of the strip");
+			if (!stripping) throw new InvalidOperationException("Can't add wall: strip belum mulai.");
+			if (!this.stripStarted) throw new InvalidOperationException("Can't add wall: butuh tembok untuk memulai strip");
 			Wall last = this.last;
 			Wall next;
 			if (! invert )
@@ -39,7 +41,7 @@ namespace TareaGL
 
 		public void Add (double fx, double fz, double tx, double tz, string type) 
 		{
-			if (!stripping) throw new InvalidOperationException("Can't add wall: strip not started.");
+			if (!stripping) throw new InvalidOperationException("Can't add wall: strip belum dimulai");
 			last = WallBuilder.BuildWall(new Point3D(fx,0,fz),new Point3D(tx,0,tz),bottom,height,type);
 			walls.Add(last);
 			this.closewall();
@@ -58,7 +60,7 @@ namespace TareaGL
 		protected Wall last=null;
 		public void Add (Wall w)
 		{
-			if (!stripping) throw new InvalidOperationException("Can't add wall: strip not started.");
+			if (!stripping) throw new InvalidOperationException("Can't add wall: strip belum dimulai");
 			last=w;
 			walls.Add(w);
 			this.closewall();
@@ -88,17 +90,19 @@ namespace TareaGL
 		protected bool stripCloseEnd=true;
 		protected bool stripCloseStart=true;
 		protected bool stripping = false;
+
 		public virtual void BeginStrip(bool closeFrom, bool closeTo) 
 		{
-			if (stripping) throw new InvalidOperationException("WallStrip already started");
+			if (stripping) throw new InvalidOperationException("WallStrip sudah dimulai");
 			this.stripCloseStart=closeFrom;
 			this.stripCloseEnd=closeTo;
 			this.stripStarted=false;
 			this.stripping=true;
 		}
+
 		public virtual void EndStrip() 
 		{
-			if (!stripping) throw new InvalidOperationException("WallStrip already stopped");
+			if (!stripping) throw new InvalidOperationException("WallStrip sudah berhenti");
 			last.CloseTo(this.stripCloseEnd);
 			this.stripping=false;
 		}
@@ -118,9 +122,10 @@ namespace TareaGL
 		{
 			this.walls.FindTargetsFor(c,result);
 		}	
-		public override Point3D ColisionNormal(Point3D punto, Point3D direction, double radius) 
+
+		public override Point3D ColisionNormal(Point3D point, Point3D direction, double radius) 
 		{
-			return this.walls.ColisionNormal(punto,direction,radius);
+			return this.walls.ColisionNormal(point,direction,radius);
 		}
 	}
 }

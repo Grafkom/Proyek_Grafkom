@@ -417,9 +417,9 @@ namespace TareaGL
 				case "WOOD2": return CreateTexture("MADERA1B.jpg"); break;
 				case "ROSEGOLD": return CreateTexture("rose.jpg"); break;
 				case "WALL": return CreateTexture("PARED1.jpg"); break;
-				case "PISO": return CreateTexture("creame.jpg"); break;
-				case "TECHOOUT": return CreateTexture("madera9.jpg"); break;
-				case "TECHOIN": return CreateTexture("PARED2.jpg"); break;
+				case "FLOOR": return CreateTexture("creame.jpg"); break;
+				case "ROOFOUT": return CreateTexture("madera9.jpg"); break;
+				case "ROOFIN": return CreateTexture("PARED2.jpg"); break;
 				case "BISAGRA": return CreateTexture("bisagra.jpg"); break;
 				case "PUERTA": return Texture("WOOD2"); break;
 				case "KNOB": return Texture("WOOD1"); break;
